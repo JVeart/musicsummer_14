@@ -88,6 +88,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
+    non-stupid-digest-assets (1.0.4)
     oauth (0.4.7)
     oauth2 (0.9.4)
       faraday (>= 0.8, < 0.10)
@@ -137,7 +138,7 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
-    sprockets (2.11.0)
+    sprockets (2.12.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -183,6 +184,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
+  non-stupid-digest-assets
   omniauth
   omniauth-facebook
   omniauth-twitter

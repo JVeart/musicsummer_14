@@ -13,6 +13,8 @@ gem 'haml'
 gem 'haml-rails'
 gem 'formtastic'
 
+gem "non-stupid-digest-assets"
+
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
