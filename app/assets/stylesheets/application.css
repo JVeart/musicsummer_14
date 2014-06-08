@@ -231,7 +231,11 @@ a:hover
 {
     bottom: 0;
 }
-
+textarea:focus,
+input:focus
+{
+    outline: 0;
+}
 footer
 {
 	padding-top: 55px;
