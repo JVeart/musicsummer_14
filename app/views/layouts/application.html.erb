@@ -8,8 +8,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container page_container controller-<%= controller.controller_name %> action-<%= controller.action_name %>">
+    <%= yield %>
+  </div>
+  <footer>
+    Latvian Music Summer © 2014
+    <br>
+    Alternative advertising rock, branding pop, design’n’code by
+    <a href="http://jveart.com" target="_blank"><div class="jveart_logo"></div></a>
+  </footer>  
 </body>
 </html>

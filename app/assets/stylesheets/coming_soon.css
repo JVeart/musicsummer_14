@@ -1,0 +1,115 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+.logo
+{
+	padding-top: 90px;
+	width: 100%;
+	height: 255px;
+	position: relative;
+}
+.logo .logo_text
+{
+	font-size: 22px;
+	line-height: 32px;
+	position: absolute;
+	text-align: right;
+	top: 125px;
+	right: 50%;
+	margin-right: 135px; 
+}
+.logo .logo_image
+{
+    background-image: url("/assets/logo.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 255px;
+	position: absolute;
+	top: 90px;
+	left: 50%;
+    margin-left: -85px;
+    width: 257px;
+}
+.teaser_warp
+{
+	position: relative;
+	padding-top: 45px;
+	margin-top: 90px;
+}
+.teaser .right_side
+{
+	position: absolute;
+	width: 50%;
+	right: 0;
+	top: 0;
+	height: 655px;
+	background-color: #3C5B97;
+	z-index: -1;
+	
+}
+.teaser .teaser_image
+{
+	background-image: url("/assets/teaser.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 610px;
+    margin-left: -1px;
+    width: 100%;
+}
+.share
+{
+	margin-top: 150px;
+	width: 775px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.share .links > div
+{
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+.share .copy_field
+{
+    border: 2px dashed #D4D4D4;
+    border-radius: 4px;
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 18px;
+    margin-top: 60px;
+    text-align: center;
+	color: #25ae5f;
+	font-size: 18px;
+	font-style: italic;
+	letter-spacing: 0.5px;
+}
+.share .share_link .copy_field
+{
+	width: 340px;
+}
+.share .hashtag .copy_field
+{
+	width: 230px;
+}
+.social_links
+{
+	margin-top: 160px;
+	margin-bottom: 25px;
+	font-size: 15px;
+	line-height: 30px;
+	font-weight: bold;
+	text-align: center;
+}
+.social_links a
+{
+	color: #c1c1c1;
+	text-decoration: none;
+	padding: 0 6px;
+	margin: 0 7px
+}
+.social_links a:hover
+{
+	color: #a09f9f;
+}
