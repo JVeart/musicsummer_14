@@ -152,16 +152,17 @@
 {
     border: 2px dashed #D4D4D4;
     border-radius: 4px;
+    color: #25AE5F;
     display: inline-block;
-    height: 45px;
-    line-height: 45px;
+    font-size: 18px;
+    font-style: italic;
+    height: 25px;
+    letter-spacing: 0.5px;
+    line-height: 25px;
     margin-bottom: 18px;
     margin-top: 60px;
+    padding: 10px 0;
     text-align: center;
-	color: #25ae5f;
-	font-size: 18px;
-	font-style: italic;
-	letter-spacing: 0.5px;
 }
 .share .share_link .copy_field
 {
