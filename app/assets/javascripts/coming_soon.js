@@ -3,6 +3,7 @@ jQuery(function()
 	var container = jQuery('.container');
 	
 	var copy_buttons = container.find('.share .button');
+	var top_link = container.find('.top_link');
 	
 	if (container.is('.controller-coming_soon'))
 	{
@@ -18,6 +19,14 @@ jQuery(function()
 			range.selectNodeContents(text);
 			selection.removeAllRanges();
 			selection.addRange(range);
+		});
+		
+		top_link.click(function()
+		{
+			jQuery('body,html').animate(
+			{
+				scrollTop: 0
+			}, 400);
 		});
 	}
 });
