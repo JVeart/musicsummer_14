@@ -163,6 +163,8 @@
     margin-top: 60px;
     padding: 10px 0;
     text-align: center;
+	background-color: transparent;
+	-webkit-appearance: none;
 }
 .share .share_link .copy_field
 {
