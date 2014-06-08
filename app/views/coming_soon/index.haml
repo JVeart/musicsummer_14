@@ -35,11 +35,14 @@
 									= days_until_start
 									dienām
 								- elsif days_until_start == 0
-									Jau šodien
+									šodien
 								- else
-									vēl
-									= (festival.end_date - Date.today).to_i
-									dienas
+									- if (festival.end_date - Date.today).to_i > 0
+										vēl 
+										= (festival.end_date - Date.today).to_i
+										dienas
+									- else
+										pēdējā diena
 							.link
 								%a{ :href => festival.lineup_link, :target=>'_blank' } mākslinieki
 							.clear
