@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'coming_soon#index'
   get 'music' => 'coming_soon#index'
   get 'muzika' => 'coming_soon#index'
+  get 'calendar' => 'calendar#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

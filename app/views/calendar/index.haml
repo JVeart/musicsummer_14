@@ -1,0 +1,56 @@
+.calendar
+	.upcoming
+		- @upcoming.each do |month_no, festivals|
+			.month
+				- if month_no == 6
+					%h1 Jūnijs
+				- if month_no == 7
+					%h1 Jūlijs
+				- if month_no == 8
+					%h1 Augusts
+				.festivals
+					- festivals.each do |festival|
+						.festival_item
+							.name
+								= festival.name
+							.date
+								- days_until_start = (festival.start_date - Date.today).to_i
+								- if days_until_start > 0
+									pēc
+									= days_until_start
+									dienām
+								- elsif days_until_start == 0
+									šodien
+								- else
+									- if (festival.end_date - Date.today).to_i > 0
+										vēl 
+										= (festival.end_date - Date.today).to_i
+										dienas
+									- else
+										pēdējā diena
+							.link
+								%a{ :href => festival.lineup_link, :target=>'_blank' } mākslinieki
+							.clear
+	%hr.green				
+	.past
+		- @past.each do |month_no, festivals|
+			.month
+				- if month_no == 6
+					%h1 Jūnijs
+				- if month_no == 7
+					%h1 Jūlijs
+				- if month_no == 8
+					%h1 Augusts
+				.festivals
+					- festivals.each do |festival|
+						.festival_item
+							.name
+								= festival.name
+							.date
+								= "#{festival.start_date.day<10 ? '0' : ''}#{festival.start_date.day}."
+								- if festival.start_date.day != festival.end_date.day
+									= "- #{festival.end_date.day<10 ? '0' : ''}#{festival.end_date.day}."
+									
+							.link
+								%a{ :href => festival.lineup_link, :target=>'_blank' } mākslinieki
+							.clear
