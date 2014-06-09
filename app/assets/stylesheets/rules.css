@@ -1,0 +1,23 @@
+.rules
+{
+	padding-top: 80px;
+	width: 670px;
+	margin: 0 auto;
+}
+.rules h1
+{
+	font-size: 38px;
+	line-height: 30px;
+	text-align: left;
+}
+.rules p
+{
+	font-size: 18px;
+	line-height: 30px;
+	margin: 30px 0;
+	font-weight: 500;
+}
+.rules p.thin
+{
+	font-weight: normal;
+}
