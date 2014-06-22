@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'coming_soon#index'
-  get 'music' => 'coming_soon#index'
-  get 'muzika' => 'coming_soon#index'
+  get 'music' => 'music#index'
+  get 'muzika' => 'music#index'
   
   get 'about' => 'about#index'
   get 'rules' => 'rules#index'

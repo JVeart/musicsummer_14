@@ -2,35 +2,7 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
-.logo
-{
-	padding-top: 90px;
-	width: 100%;
-	height: 255px;
-	position: relative;
-}
-.logo .logo_text
-{
-	font-size: 22px;
-	line-height: 32px;
-	position: absolute;
-	text-align: right;
-	top: 125px;
-	right: 50%;
-	margin-right: 135px; 
-}
-.logo .logo_image
-{
-    background-image: url("/assets/logo.svg");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    height: 255px;
-	position: absolute;
-	top: 90px;
-	left: 50%;
-    margin-left: -85px;
-    width: 257px;
-}
+
 .teaser_warp
 {
 	position: relative;

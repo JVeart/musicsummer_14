@@ -175,6 +175,7 @@ a:hover
 	color: #c1c1c1;
 }
 
+.product_button,
 .button
 {
 	position: relative;
@@ -194,7 +195,6 @@ a:hover
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	user-select: none;
-	
 	cursor: pointer;
 }
 .button:hover
@@ -236,6 +236,59 @@ input:focus
 {
     outline: 0;
 }
+
+
+
+
+.logo
+{
+	padding-top: 90px;
+	width: 100%;
+	height: 255px;
+	position: relative;
+}
+.logo .logo_text
+{
+	font-size: 22px;
+	line-height: 32px;
+	position: absolute;
+	text-align: right;
+	top: 125px;
+	right: 50%;
+	margin-right: 135px; 
+}
+.logo .logo_image
+{
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 255px;
+	position: absolute;
+	top: 90px;
+	left: 50%;
+    margin-left: -85px;
+    width: 257px;
+}
+.logo .logo_image.green
+{
+    background-image: url("/assets/logo_green.svg");
+}
+.logo .logo_image.red
+{
+    background-image: url("/assets/logo_red.svg");
+}
+.logo a
+{
+	line-height: 18px;
+	text-decoration: none;
+	color: #C1C1C1;
+}
+.logo a:hover
+{
+	color: #A09F9F;	
+}
+
+
+
 footer
 {
 	padding-top: 55px;
@@ -245,6 +298,17 @@ footer
 	line-height: 24px;
 	color: #c1c1c1;
 	text-align: center;
+}
+footer a
+{
+	font-size: 14px;
+	line-height: 24px;
+	color: #a09f9f;
+	font-weight: 500;
+}
+footer a:hover
+{
+	color: #c1c1c1;
 }
 footer .jveart_logo
 {

@@ -1,0 +1,81 @@
+- mail_to = 'mailto:hello@jveart.com'
+- fb_url = 'https://www.facebook.com/LatvianMusicSummer'
+- tw_url = 'https://twitter.com/MusicSummerLV'
+- dr_url = 'http://www.draugiem.lv/latvianmusicsummer/'
+- gh_url = 'https://github.com/JVeart/musicsummer_14'
+
+.logo
+	.logo_text
+		%a{ :href => calendar_path } Festivāli
+		%br
+		%a{ :href => about_path } Par projektu
+		%br
+		%a{ :href => rules_path } Noteikumi
+	.logo_image.green
+
+.artists
+	.button.shift_right
+		Klausīties
+	%h2
+		Mūzikas festivālu
+		%span gaidītāko mākslinieku
+		plakāts
+	.artists_wrap
+		- 20.times do |i|
+			%span.artist
+				%a{ :href => "/artist/#{i}" } Lorem ipsum,
+	.button
+		Pievienot
+	%h3
+		Pievieno savus gaidītākos māksliniekus 
+		un laimē biļetes uz festivāliem.
+	
+.products
+	%h1
+		%span Reklāmu
+		katalogs
+	.product_wrap
+		- 8.times do |i|
+			.product
+				.image{ :style => "background-image: url('/assets/product_placeholder.jpg');" }
+					.text
+						product text
+				.product_button
+					Apskatīties
+		.clear
+	%p
+		Mēs cienam tavu izvēles brīvību tādēļ, ja reklāmas kataloga produkti tev nav aktuāli,
+		dari sekojoši - kvadrātā uzzīmē krustiņu
+		%span.green X
+		un reklāmas izgaisīs.
+	.drawing_spot
+
+.share
+	%h1
+		Dalies
+		%span tālāk
+	%p
+		Dodam linku un brīvību tev pašam izvēlēties ko vēlies rakstīt, lai aizsūtītu mūzikas vasaru draugam
+		Skype, WhatsApp, Facebook, Twitter vai citādi.
+	.links
+		.share_link
+			%input.copy_field{ :value => 'http://musicsummer.lv/muzika'}
+				
+			.button
+				Iezīmēt linku
+		.hashtag
+			%input.copy_field{ :value => '#manavasara'}
+			.button
+				Iezīmēt haštagu
+		.clear
+.social_links
+	%a{ :href => mail_to } E-pasts
+	%a{ :href => gh_url, :target=>'_blank' } Github
+	%a{ :href => fb_url, :target=>'_blank' } Facebook
+	%a{ :href => tw_url, :target=>'_blank' } Twitter
+	%a{ :href => dr_url, :target=>'_blank' } Draugiem
+	%a{ :href => calendar_path } Festivāli
+	%a{ :href => about_path } Par projektu
+	%a{ :href => rules_path } Noteikumi
+	%a.top_link{ :href => '#top' } Uz augšu ↑
+	

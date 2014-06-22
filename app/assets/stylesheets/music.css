@@ -1,0 +1,168 @@
+.artists
+{
+	width: 800px;
+	margin: -30px auto 0;
+	text-align: center;
+}
+.artists .button.shift_right
+{
+    margin-left: 170px;
+}
+.artists h2
+{
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	color: #c1c1c1;
+	margin-top: 40px;
+	margin-bottom: 100px;
+	
+}
+.artists h2 span
+{
+	color: #a09f9f;
+}
+.artists .artists_wrap
+{
+	text-align: justify;
+	margin-bottom: 100px;
+}
+.artists a
+{
+	text-decoration: none;
+	color: #c1c1c1;
+	font-size: 42px;
+	line-height: 1.2em;
+	letter-spacing: -0.25px;
+	font-weight: bold;
+}
+.artists a:hover
+{
+	text-decoration: none;
+	color: #c1c1c1;
+}
+.artists .artist:nth-child(2n) a
+{
+	color: #a09f9f;
+}
+.artists .artist:nth-child(2n) a:hover
+{
+	text-decoration: none;
+	color: #a09f9f;
+}
+.artists h3
+{
+	font-size: 17px;
+	line-height: 30px;
+	font-weight: bold;
+	color: #a09f9f;
+	margin-top: 30px;
+	margin-bottom: 115px;
+	width: 340px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.products
+{
+	width: 800px;
+	margin: 0 auto;
+}
+.products h1
+{
+	margin-bottom: 50px;
+}
+.products > p
+{
+	margin-top: 50px;
+}
+.products > p span.green
+{
+	color: #25ae5f;
+}
+.products .drawing_spot
+{
+	width: 190px;
+	height: 190px;
+	border: 2px dashed #d4d4d4;
+	border-radius: 4px;
+	margin: 50px auto 0;
+}
+.products .product
+{
+	height: 250px;
+	width: 192px;
+	margin: 0 5px 40px;
+	position: relative;
+	float: left;
+}
+.products .product:nth-child(4n+1)
+{
+	margin-left: 0;
+}
+.products .product:nth-child(4n+4)
+{
+	margin-right: 0;
+}
+.products .product .image
+{
+	border-radius: 7px 7px 0 0;
+	background-size: cover;
+	width: 192px;
+	height: 200px;
+	background-position: center;
+	position: relative;
+}
+.products .product .image .text
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 192px;
+	text-align: center;
+	color: #ececec;
+	font-size: 14px;
+	line-height: 32px;
+	font-weight: bold;
+}
+.products .product_button
+{
+	width: 192px;
+	border-radius: 0px 0px 7px 7px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.products .product:hover
+{
+	margin-top: 0px;
+}
+.products .product:active
+{
+	margin-top: 5px;
+	margin-bottom: 35px;
+}
+.products .product:before
+{
+    background-color: #289656;
+    border-radius: 7px;
+    bottom: 0;
+    content: "";
+    height: 20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+	transition: all 0.05s linear 0s;
+	-webkit-transition: all 0.05s linear 0s;
+	
+	
+}
+.products .product:hover:before
+{
+    bottom: -5px;
+}
+.products .product:active:before
+{
+    bottom: 0;
+}
