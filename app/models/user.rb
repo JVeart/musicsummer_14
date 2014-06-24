@@ -1,8 +1,10 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :twitter, :draugiem]
-         
-  def self.find_for_facebook_oauth(auth)
+  
+  has_many :votes
+  
+  def self.find_for_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
       user.uid = auth.uid

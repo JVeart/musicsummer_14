@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   root 'coming_soon#index'
   
   get 'sign_in' => 'users#sign_in'
-  get 'music' => 'music#index'
+  
+  resources :votes, :only => [ :new, :create]
+  
   get 'muzika' => 'music#index'
+  get 'music' => 'music#index'
   
   get 'about' => 'about#index'
   get 'rules' => 'rules#index'

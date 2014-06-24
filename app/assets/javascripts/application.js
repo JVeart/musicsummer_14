@@ -11,4 +11,4 @@
 // about supported directives.
 //
 //= require jquery_ujs
-//= require coming_soon
+//= require_tree ./controllers

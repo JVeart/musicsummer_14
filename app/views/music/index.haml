@@ -21,10 +21,11 @@
 		%span gaidītāko mākslinieku
 		plakāts
 	.artists_wrap
-		- 20.times do |i|
+		- @votes.each do |artist_name|
 			%span.artist
-				%a{ :href => "/artist/#{i}" } Lorem ipsum,
-	.button
+				%a{ :href => "/artist/#{artist_name}" }
+					= "#{artist_name},"
+	%a.button{ :href => new_vote_path }
 		Pievienot
 	%h3
 		Pievieno savus gaidītākos māksliniekus 

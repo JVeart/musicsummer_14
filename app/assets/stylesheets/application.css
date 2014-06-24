@@ -174,10 +174,13 @@ a:hover
 {
 	color: #c1c1c1;
 }
-
+a.button,
 .product_button,
 .button
 {
+	padding: 0;
+	border: 0;
+	display: block;
 	position: relative;
     background-color: #25AE5F;
     border-radius: 7px;
@@ -197,11 +200,15 @@ a:hover
 	user-select: none;
 	cursor: pointer;
 }
+a.button:hover,
 .button:hover
 {
+	color: #F6F6F6;
 	margin-top: 0px;
 	margin-bottom: 5px;
 }
+
+a.button:active,
 .button:active
 {
 	margin-top: 5px;

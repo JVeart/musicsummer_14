@@ -1,0 +1,28 @@
+- @formbuilder = true
+= form_for @vote do |f|
+	.artist
+		%label{ :for => 'vote_artist'}
+		= f.text_field :artist, :placeholder=>'Kurš ir tavs gaidītākais mākslinieks?', :class => :artist_search
+	.song
+		%label{ :for => 'vote_song'}
+		= f.text_field :song, :placeholder=>'Kura ir tava mīļākā dziesma?', :class => :video_search
+		= f.hidden_field :youtube_link, :class => :youtube_link
+		.preview
+	.festival
+		%label{ :for => 'vote_festival'}
+		= f.text_field :festival, :placeholder=>'Kurā festivālā uzstāsies?', :class => :festival_search
+		= f.hidden_field :festival_id, :class => :festival_id
+		.preview
+			- @festivals.each do |festival|
+				%span{ 'data-festival_id' => festival.id }= festival.name
+	.contact
+		%label{ :for => 'user_contact_email'}
+		= f.fields_for :user, @vote.user do |u|
+			= u.text_field :contact_mail, :placeholder=>'Kā ar tevi sazināties, uzvaras gadījumā?'
+	.rules_link
+		= check_box :rules, :read
+		Tava paša atbildība
+		%a{ :href => '/rules' } izlasīt noteikumus
+	.button
+		= f.submit :value => 'Saglabāt'
+	.clear
