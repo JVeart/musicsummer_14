@@ -217,6 +217,7 @@ jQuery(function()
 				{
 					var count = target.find('.count');
 					count.html( count.html()*1 + 1 );
+					target.addClass('liked');
 				}
 			},
 			error: function()
