@@ -17,6 +17,28 @@
 	width: 285px;
 	
 }
+.sign_in .social_passes a div
+{
+	background-position: center 30px;
+    background-repeat: no-repeat;
+    background-size: auto 30px;
+    height: 100%;
+    width: 100%;
+}
+.sign_in .social_passes .draugiem div
+{
+	background-image: url("/assets/draugiem.svg");
+}
+.sign_in .social_passes .twitter div
+{
+	background-size: auto 27px;
+	background-position: center 32px;
+	background-image: url("/assets/twitter.svg");
+}
+.sign_in .social_passes .facebook div
+{
+	background-image: url("/assets/facebook.svg");
+}
 .sign_in .social_passes > a
 {
     background-image: url("/assets/logo_green_small.svg");

@@ -8,7 +8,7 @@ jQuery(function()
 	var copy_field = container.find('.copy_field');
 	
 	var links = container.find( '.ajax_link' );
-	var artists = container.find( '.artists a' );
+	var artists = container.find( '.artists .artist a' );
 	var overlay = container.find( '.overlay' );
 	var player_container = container.find( '.player' );
 	
