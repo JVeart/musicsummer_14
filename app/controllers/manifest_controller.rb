@@ -1,5 +1,9 @@
-class AboutController < ApplicationController
+class ManifestController < ApplicationController
   def index
+    @votes = Vote.all.group( :artist ).order('count_all desc').count.keys
+  end
+  
+  def about
     
     respond_to do |format|
       format.html do
@@ -9,4 +13,5 @@ class AboutController < ApplicationController
       end
     end
   end
+  
 end

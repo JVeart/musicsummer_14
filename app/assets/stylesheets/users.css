@@ -55,3 +55,21 @@
 	line-height: 28px;
 	font-weight: 500;
 }
+
+
+.controller-manifest .sign_in .social_passes .draugiem div
+{
+	background-image: url("/assets/draugiem_black.svg");
+}
+.controller-manifest .sign_in .social_passes .twitter div
+{
+	background-image: url("/assets/twitter_black.svg");
+}
+.controller-manifest .sign_in .social_passes .facebook div
+{
+	background-image: url("/assets/facebook_black.svg");
+}
+.controller-manifest .sign_in .social_passes > a
+{
+    background-image: url("/assets/logo_red_small.svg");
+}

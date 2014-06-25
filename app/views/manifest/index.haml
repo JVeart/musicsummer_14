@@ -5,31 +5,25 @@
 - gh_url = 'https://github.com/JVeart/musicsummer_14'
 
 .logo
-	.logo_text
-		%a.ajax_link{ :href => calendar_path } Festivāli
-		%br
-		%a.ajax_link{ :href => music_about_path } Par projektu
-		%br
-		%a.ajax_link{ :href => rules_path } Noteikumi
-	.logo_image.green
+	.logo_image.red
 
-.artists
-	.button.shift_right
-		Klausīties
+.reports
+	%a.button.shift_right.ajax_link{ :href => manifest_about_path }
+		Lasīt manifestu
 	%h2
-		Mūzikas festivālu
-		%span gaidītāko mākslinieku
+		Nemīlētāko
+		%span share* konkursu organizētāju
 		plakāts
-	.artists_wrap
-		- @votes.each do |artist_name|
-			%span.artist
-				%a{ :href => "/artists/#{artist_name}" }
-					= "#{artist_name},"
-	%a.button.ajax_link{ :href => new_vote_path }
+	.reports_wrap
+		- @votes.each do |report_name|
+			%span.report
+				%a{ :href => "/reports/#{report_name}" }
+					= "#{report_name},"
+	%a.button.ajax_link{ :href => new_report_path }
 		Pievienot
 	%h3
-		Pievieno savus gaidītākos māksliniekus 
-		un laimē biļetes uz festivāliem.
+		Pievieno savus nemīlētākos konkursu linkus 
+		un laimē biļetes uz festivāliem
 	
 .products
 	%h1
@@ -47,7 +41,7 @@
 	%p
 		Mēs cienam tavu izvēles brīvību tādēļ, ja reklāmas kataloga produkti tev nav aktuāli,
 		dari sekojoši - kvadrātā uzzīmē krustiņu
-		%span.green X
+		%span.red X
 		un reklāmas izgaisīs.
 	.drawing_spot
 
@@ -75,8 +69,7 @@
 	%a{ :href => fb_url, :target=>'_blank' } Facebook
 	%a{ :href => tw_url, :target=>'_blank' } Twitter
 	%a{ :href => dr_url, :target=>'_blank' } Draugiem
-	%a.ajax_link{ :href => calendar_path } Festivāli
-	%a.ajax_link{ :href => music_about_path } Par projektu
+	%a.ajax_link{ :href => manifest_about_path } Manifests
 	%a.ajax_link{ :href => rules_path } Noteikumi
 	%a.top_link{ :href => '#top' } Uz augšu ↑
 	

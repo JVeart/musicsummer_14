@@ -123,20 +123,40 @@
 body
 {
 	background-color: #ECECEC;
-	font-family:  open_sans, Helvetica, Arial, sans-serif;
 	color: #a09f9f;
+	font-family:  open_sans, Helvetica, Arial, sans-serif;
 	font-weight: 500;
+}
+.body-manifest
+{
+	color: #253578;
+	background-color: #3b5999;
 }
 .container
 {
 	position: relative;
 }
-::selection {
+
+
+
+::selection
+{
 	background: #25AE5F; /* Safari */
 	color: #F6F6F6;
-	}
+}
 ::-moz-selection {
 	background: #25AE5F; /* Firefox */
+	color: #F6F6F6;
+}
+
+.controller-manifest ::selection
+{
+	background: #c13a2c; /* Safari */
+	color: #F6F6F6;
+}
+.controller-manifest ::-moz-selection
+{
+	background: #c13a2c; /* Firefox */
 	color: #F6F6F6;
 }
 .clear
@@ -160,6 +180,7 @@ h1 span
 {
 	color: #c1c1c1;
 }
+
 p
 {
 	font-size: 18px;
@@ -177,6 +198,19 @@ a
 a:hover
 {
 	color: #c1c1c1;
+}
+.controller-manifest h1 span
+{
+	color: #5e6eaf;
+}
+
+.controller-manifest a
+{
+	color: #253578;
+}
+.controller-manifest a:hover
+{
+	color: #5e6eaf;
 }
 a.button,
 .product_button,
@@ -204,6 +238,7 @@ a.button,
 	user-select: none;
 	cursor: pointer;
 }
+
 a.button:hover,
 .button:hover
 {
@@ -231,9 +266,8 @@ a.button:active,
     z-index: -1;
 	transition: all 0.05s linear 0s;
 	-webkit-transition: all 0.05s linear 0s;
-	
-	
 }
+
 .button:hover:before
 {
     bottom: -5px;
@@ -242,6 +276,18 @@ a.button:active,
 {
     bottom: 0;
 }
+.controller-manifest a.button,
+.controller-manifest .product_button,
+.controller-manifest .button
+{
+	background-color: #c13a2c;
+}
+.controller-manifest .button:before
+{
+    background-color: #9b2b23;
+}
+
+
 textarea:focus,
 input:focus
 {
@@ -299,7 +345,6 @@ input:focus
 }
 
 
-
 footer
 {
 	padding-top: 55px;
@@ -321,6 +366,7 @@ footer a:hover
 {
 	color: #c1c1c1;
 }
+
 footer .jveart_logo
 {
     background-image: url("/assets/jveart_logo.svg");
@@ -330,4 +376,22 @@ footer .jveart_logo
     height: 18px;
     width: 53px;
 	vertical-align: middle;
+}
+
+footer.controller-manifest
+{
+	background-color: #37528e;
+	color: #253578;
+}
+footer.controller-manifest a
+{
+	color: #5e6eaf;
+}
+footer.controller-manifest a:hover
+{
+	color: #253578;
+}
+footer.controller-manifest .jveart_logo
+{
+    background-image: url("/assets/jveart_logo_blue.svg");
 }

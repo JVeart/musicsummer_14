@@ -24,11 +24,11 @@
   
   </script>
 </head>
-<body>
+<body class="body-<%= controller.controller_name %>">
   <div class="container page_container controller-<%= controller.controller_name %> action-<%= controller.action_name %>">
     <%= yield %>
   </div>
-  <footer>
+  <footer class="controller-<%= controller.controller_name %>">
     Latvian Music Summer © 2014
     <br>
     Jūsu brīvība kopēt, pārveidot, remiksēt un dalīties ar visu

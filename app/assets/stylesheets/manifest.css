@@ -1,0 +1,88 @@
+.reports
+{
+	width: 800px;
+	margin: -30px auto 0;
+	text-align: center;
+}
+.reports .button.shift_right
+{
+    margin-left: 170px;
+}
+.reports h2
+{
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	color: #253578;
+	margin-top: 40px;
+	margin-bottom: 100px;
+	
+}
+.reports h2 span
+{
+	color: #5569a9;
+}
+.reports .reports_wrap
+{
+	text-align: justify;
+	margin-bottom: 100px;
+}
+.reports a
+{
+	text-decoration: none;
+	color: #253578;
+	font-size: 42px;
+	line-height: 1.2em;
+	letter-spacing: -0.25px;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+.reports a:hover
+{
+	text-decoration: none;
+	color: #253578;
+}
+.reports .report:nth-child(2n) a
+{
+	color: #5569a9;
+}
+.reports .report:nth-child(2n) a:hover
+{
+	text-decoration: none;
+	color: #5569a9;
+}
+.reports h3
+{
+	font-size: 17px;
+	line-height: 30px;
+	font-weight: bold;
+	color: #253578;
+	margin-top: 30px;
+	margin-bottom: 115px;
+	width: 380px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.products > p span.red
+{
+	color: #c13a2c;
+}
+.controller-manifest .products .drawing_spot
+{
+	border: 2px dashed #2d4284;
+}
+.controller-manifest .products .product:before
+{
+    background-color: #9b2b23;
+}
+.controller-manifest .share .copy_field
+{
+    border: 2px dashed #2d4284;
+    color: #eef3f5;
+}
+
+.controller-manifest .overlay.visible
+{
+    background-color: rgba(59, 89, 153, 0.9);
+}

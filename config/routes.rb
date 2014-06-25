@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root 'coming_soon#index'
   
-  get 'sign_in' => 'users#sign_in'
-  
   resources :votes, :only => [ :new, :create]
   resources :artists, :only => [ :show ] do
     member do
@@ -12,10 +10,23 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :reports, :only => [ :new, :create]
+  resources :contests, :only => [ :show ] do
+    member do
+      post :vote
+    end
+  end
+  
   get 'muzika' => 'music#index'
   get 'music' => 'music#index'
+  get 'music/about' => 'music#about'
+  get 'music/sign_in' => 'users#sign_in'
   
-  get 'about' => 'about#index'
+  get 'manifests' => 'manifest#index'
+  get 'manifest' => 'manifest#index'
+  get 'manifest/about' => 'manifest#about'
+  get 'manifest/sign_in' => 'users#sign_in'
+  
   get 'rules' => 'rules#index'
   get 'calendar' => 'calendar#index'
 
