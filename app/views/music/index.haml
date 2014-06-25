@@ -6,11 +6,11 @@
 
 .logo
 	.logo_text
-		%a{ :href => calendar_path } Festivāli
+		%a.ajax_link{ :href => calendar_path } Festivāli
 		%br
-		%a{ :href => about_path } Par projektu
+		%a.ajax_link{ :href => about_path } Par projektu
 		%br
-		%a{ :href => rules_path } Noteikumi
+		%a.ajax_link{ :href => rules_path } Noteikumi
 	.logo_image.green
 
 .artists
@@ -23,9 +23,9 @@
 	.artists_wrap
 		- @votes.each do |artist_name|
 			%span.artist
-				%a{ :href => "/artist/#{artist_name}" }
+				%a{ :href => "/artists/#{artist_name}" }
 					= "#{artist_name},"
-	%a.button{ :href => new_vote_path }
+	%a.button.ajax_link{ :href => new_vote_path }
 		Pievienot
 	%h3
 		Pievieno savus gaidītākos māksliniekus 
@@ -80,3 +80,14 @@
 	%a{ :href => rules_path } Noteikumi
 	%a.top_link{ :href => '#top' } Uz augšu ↑
 	
+.overlay
+.player
+	.video
+		#player
+	.description
+		.artist
+		.festival
+		.vote
+			.count
+	.controls
+		.play

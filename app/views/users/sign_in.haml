@@ -1,8 +1,9 @@
-%h1 Balso tikai cilvēks
-%h3 Ienāc ar pasi
-.social_passes
-	%a.facebook{ :href => user_omniauth_authorize_path(:facebook) }
-	%a.twitter{ :href => user_omniauth_authorize_path(:twitter) }
-	%a.draugiem{ :href => user_omniauth_authorize_path(:draugiem) }
-	.clear
-%p Ja šajā brīdī nodomā cik viss bija vienkārši un viegli līdz nebija jāielogojas ar sociālo tiklu profila pasi, tad atslābsti, jo mēs cienam tavus datus. Apsolam neizmantot tavu vārdu, profila bildi un nebūs nekādu automātisko ziņu. Balsošanas motoram mums vajadzīgs tikai apliecinājums, ka tu neesi robots, bet īsts cilvēks. Un vēl labāk, ja latviešu cilvēks.
+.sign_in
+	%h1 Balso tikai cilvēks
+	%h3 Ienāc ar pasi
+	.social_passes
+		%a.facebook{ :href => user_omniauth_authorize_path(:facebook) }
+		%a.twitter{ :href => user_omniauth_authorize_path(:twitter) }
+		%a.draugiem{ :href => user_omniauth_authorize_path(:draugiem) }
+		.clear
+	%p Ja šajā brīdī nodomā cik viss bija vienkārši un viegli līdz nebija jāielogojas ar sociālo tiklu profila pasi, tad atslābsti, jo mēs cienam tavus datus. Apsolam neizmantot tavu vārdu, profila bildi un nebūs nekādu automātisko ziņu. Balsošanas motoram mums vajadzīgs tikai apliecinājums, ka tu neesi robots, bet īsts cilvēks. Un vēl labāk, ja latviešu cilvēks.

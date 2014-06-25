@@ -24,16 +24,21 @@ class VotesController < ApplicationController
   
   def new
     
-    @vote = current_user.votes.build
-    @festivals = Festival.all.reorder( 'name ASC' )
-    
-    respond_to do |format|
-      format.html do
-        unless params[:ajax].blank?
-          render :layout => false
+    if current_user.blank?
+      redirect_to sign_in_path( :ajax => params[:ajax] )
+    else
+      @vote = current_user.votes.build
+      @festivals = Festival.all.reorder( 'name ASC' )
+      
+      respond_to do |format|
+        format.html do
+          unless params[:ajax].blank?
+            render :layout => false
+          end
         end
       end
     end
+    
   end
   
   private
