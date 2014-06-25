@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     end
   end
   
+  get 'landing' => 'landing#index'
+  
   get 'muzika' => 'music#index'
   get 'music' => 'music#index'
   get 'music/about' => 'music#about'

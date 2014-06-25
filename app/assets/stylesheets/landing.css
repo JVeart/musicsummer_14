@@ -1,0 +1,78 @@
+.controller-landing
+{
+	height: 100%;
+	color: #c1c1c1;
+}
+.controller-landing .logo
+{
+    padding-bottom: 85px;
+}
+.controller-landing .logo .logo_image
+{
+    left: 40px;
+    margin-left: 0;
+}
+.controller-landing .manifest .logo .logo_image
+{
+    left: 108px;
+    margin-left: 0;
+}
+.controller-landing .helper
+{
+    left: 183px;
+    position: absolute;
+    top: -52px;
+}
+.controller-landing a
+{
+	text-decoration: none;
+}
+.controller-landing p
+{
+	width: 290px;
+	margin-bottom: 40px;
+}
+.controller-landing p span
+{
+	color: #a09f9f;
+}
+.controller-landing .manifest p span
+{
+	color: #5e6eaf;	
+}
+.controller-landing .music_wrap,
+.controller-landing .manifest_wrap
+{
+	z-index: 1;
+	position: relative;
+	width: 440px;
+	text-align: center;
+}
+.controller-landing .music_wrap
+{
+	float: right;
+}
+.controller-landing .manifest_wrap
+{
+	float: left;
+}
+.controller-landing .music
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+}
+.controller-landing .manifest
+{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+}
+.body-landing footer
+{
+	display: none;
+}

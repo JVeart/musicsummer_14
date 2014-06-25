@@ -127,6 +127,7 @@ body
 	font-family:  open_sans, Helvetica, Arial, sans-serif;
 	font-weight: 500;
 }
+.controller-landing .manifest,
 .body-manifest
 {
 	color: #253578;
@@ -149,11 +150,13 @@ body
 	color: #F6F6F6;
 }
 
+.controller-landing .manifest ::selection,
 .controller-manifest ::selection
 {
 	background: #c13a2c; /* Safari */
 	color: #F6F6F6;
 }
+.controller-landing .manifest ::-moz-selection,
 .controller-manifest ::-moz-selection
 {
 	background: #c13a2c; /* Firefox */
@@ -276,12 +279,16 @@ a.button:active,
 {
     bottom: 0;
 }
+.controller-landing .manifest a.button,
+.controller-landing .manifest .product_button,
+.controller-landing .manifest .button,
 .controller-manifest a.button,
 .controller-manifest .product_button,
 .controller-manifest .button
 {
 	background-color: #c13a2c;
 }
+.controller-landing .manifest .button:before,
 .controller-manifest .button:before
 {
     background-color: #9b2b23;
@@ -342,6 +349,23 @@ input:focus
 .logo a:hover
 {
 	color: #A09F9F;	
+}
+
+.helper
+{
+	width: 167px;
+	height: 167px;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: center;
+}
+.helper.music_helper
+{
+	background-image: url('/assets/music_helper.png');
+}
+.helper.manifest_helper
+{
+	background-image: url('/assets/manifest_helper.png');
 }
 
 
