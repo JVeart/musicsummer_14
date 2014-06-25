@@ -183,6 +183,8 @@ jQuery(function()
 		player_container.find( '.festival' ).html(item.festival);
 		player_container.find( '.artist' ).html(item.artist);
 		player_container.find( '.count' ).html(item.count);
+		player_container.find( '.vote' ).attr('action', '/artists/'+item.artist+'/vote');
+		player_container.find( '.vote' ).toggleClass('liked', item.liked );
 		
 		video_ids = [item.youtube_link];
 		onYouTubeIframeAPIReady();
@@ -200,6 +202,29 @@ jQuery(function()
 		}
 	});
 	
-	
+	container.on('click', '.vote', function()
+	{
+		var target = jQuery(this);
+		
+		jQuery.ajax
+		({
+			type: 'POST',
+			format: 'json',
+			url:  target.attr('action')+'.json',
+			success: function( result )
+			{
+				if ( result.success )
+				{
+					var count = target.find('.count');
+					count.html( count.html()*1 + 1 );
+				}
+			},
+			error: function()
+			{
+				//
+			}
+		});
+		
+	});
 	
 });

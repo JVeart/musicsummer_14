@@ -301,12 +301,20 @@
 }
 .player .vote
 {
-	width: 68px;
-	height: 68px;
-	position: absolute;
-	right: 0;
-	top: 0;
-	background-color: #e64a3b;
+    background-color: #e64a3b;
+    background-image: url("/assets/like.svg");
+    background-position: center 12px;
+    background-repeat: no-repeat;
+    background-size: auto 35px;
+    height: 68px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 68px;
+}
+.player .vote.liked
+{
+	background-image: url('/assets/liked.svg');
 }
 .player .vote .count
 {

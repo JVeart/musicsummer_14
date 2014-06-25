@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   get 'sign_in' => 'users#sign_in'
   
   resources :votes, :only => [ :new, :create]
-  resources :artists, :only => [ :show ]
+  resources :artists, :only => [ :show ] do
+    member do
+      post :vote
+    end
+  end
   
   get 'muzika' => 'music#index'
   get 'music' => 'music#index'

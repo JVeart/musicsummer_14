@@ -17,7 +17,7 @@ class VotesController < ApplicationController
         end
       end
       format.json do
-        render :json => { :success => @vote.save }
+        render :json => { :success => @vote.save, :errors => @vote.errors }
       end
     end
   end
