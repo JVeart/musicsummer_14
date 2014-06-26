@@ -50,23 +50,46 @@
 {
 	float: left;
 }
-.controller-landing .music
-{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 50%;
-	height: 100%;
-}
+.controller-landing .music,
 .controller-landing .manifest
 {
 	position: absolute;
 	top: 0;
-	left: 50%;
 	width: 50%;
-	height: 100%;
+	padding-bottom: 60px;
+}
+.controller-landing .music
+{
+	left: 0;
+}
+.controller-landing .manifest
+{
+	left: 50%;
 }
 .body-landing footer
 {
 	display: none;
+}
+.landing_overlay
+{
+	background-color: rgba(35, 39, 48, 0.37);
+    height: 100%;
+    pointer-events: none;
+    position: fixed;
+    width: 50%;
+    z-index: 1;
+	transition: opacity 0.3s ease-in-out 0s;
+	-webkit-transition: opacity 0.3s ease-in-out 0s;
+}
+.manifest .landing_overlay
+{
+	left: 50%;
+}
+.music .landing_overlay
+{
+	left: 0;
+}
+.controller-landing >div:hover .landing_overlay
+{
+	opacity: 0;
 }
