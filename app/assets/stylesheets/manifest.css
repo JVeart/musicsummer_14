@@ -86,3 +86,29 @@
 {
     background-color: rgba(59, 89, 153, 0.9);
 }
+
+.body-manifest .second_footer
+{
+	color: #c1c1c1;
+	background-color: #ececec;
+}
+
+.body-manifest .second_footer .music p span
+{
+	color: #9d9c9c;	
+}
+.body-manifest .second_footer .logo
+{
+	left: 50%;
+	right: auto;
+}
+.body-manifest .second_footer .logo .logo_image
+{
+	left: 0;
+	margin: 0;
+}
+.body-manifest .second_footer .text
+{
+	right: 50%;
+	left: auto;
+}

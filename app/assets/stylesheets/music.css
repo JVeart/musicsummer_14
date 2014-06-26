@@ -357,3 +357,14 @@
 {
 	background-image: url('/assets/pause.svg');
 }
+
+.body-music .second_footer
+{
+	color: #253578;
+	background-color: #3b5999;
+}
+
+.body-music .second_footer .manifest p span
+{
+	color: #5e6eaf;	
+}

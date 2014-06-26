@@ -240,6 +240,7 @@ a.button,
 	-webkit-user-select: none;
 	user-select: none;
 	cursor: pointer;
+	text-decoration: none;
 }
 
 a.button:hover,
@@ -279,16 +280,16 @@ a.button:active,
 {
     bottom: 0;
 }
-.controller-landing .manifest a.button,
-.controller-landing .manifest .product_button,
-.controller-landing .manifest .button,
+.manifest a.button,
+.manifest .product_button,
+.manifest .button,
 .controller-manifest a.button,
 .controller-manifest .product_button,
 .controller-manifest .button
 {
 	background-color: #c13a2c;
 }
-.controller-landing .manifest .button:before,
+.manifest .button:before,
 .controller-manifest .button:before
 {
     background-color: #9b2b23;
@@ -421,4 +422,55 @@ footer.controller-manifest a:hover
 footer.controller-manifest .jveart_logo
 {
     background-image: url("/assets/jveart_logo_blue.svg");
+}
+
+.second_footer
+{
+	height: 425px;
+}
+.second_footer .music_wrap,
+.second_footer .manifest_wrap
+{
+	z-index: 1;
+	position: relative;
+	text-align: center;
+	height: 100%;
+}
+.second_footer .logo,
+.second_footer .text
+{
+	position: absolute;
+	top: 0;
+	width: 440px;
+	height: 100%;
+}
+.second_footer .logo
+{
+	right: 50%;
+	margin-top: 30px;
+}
+.second_footer .text
+{
+	left: 50%;
+	margin-top: 130px;
+}
+.second_footer p
+{
+	width: 290px;
+	margin-bottom: 40px;
+}
+.second_footer .footer_overlay
+{
+    background-color: rgba(35, 39, 48, 0.37);
+    height: 100%;
+    pointer-events: none;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+	transition: opacity 0.3s ease-in-out 0s;
+	-webkit-transition: opacity 0.3s ease-in-out 0s;
+}
+.second_footer:hover .footer_overlay
+{
+	opacity: 0;
 }

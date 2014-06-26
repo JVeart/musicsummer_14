@@ -40,6 +40,12 @@
     Alternative advertising rock, branding pop, design’n’code by
     <a href="http://jveart.com" target="_blank"><div class="jveart_logo"></div></a>
   </footer>
+  <% if controller.controller_name == 'music' || controller.controller_name == 'manifest'  %>
+    <div class="second_footer">
+      <%= render 'second_footer' %>
+      <div class="footer_overlay"></div>
+    </div>
+  <% end %>
   <script content="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <%= javascript_include_tag 'application' %>
 </body>
