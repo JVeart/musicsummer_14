@@ -83,7 +83,7 @@
 }
 .controller-manifest .manifest_icons
 {
-    background-image: url("/assets/manifest_icons.svg");
+    background-image: url("/assets/contest_manifest_icons.svg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% auto;
