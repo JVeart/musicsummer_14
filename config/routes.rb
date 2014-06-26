@@ -11,11 +11,7 @@ Rails.application.routes.draw do
   end
   
   resources :reports, :only => [ :new, :create]
-  resources :contests, :only => [ :show ] do
-    member do
-      post :vote
-    end
-  end
+  resources :contests, :only => [ :show ]
   
   get 'landing' => 'landing#index'
   

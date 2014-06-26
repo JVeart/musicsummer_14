@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140625224052) do
+ActiveRecord::Schema.define(version: 20140626122129) do
 
   create_table "festivals", force: true do |t|
     t.string   "name"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20140625224052) do
     t.string   "contest_link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_link"
+    t.boolean  "confirmed"
   end
 
   create_table "users", force: true do |t|

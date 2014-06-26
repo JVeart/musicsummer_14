@@ -1,6 +1,6 @@
 class ManifestController < ApplicationController
   def index
-    @votes = Vote.all.group( :artist ).order('count_all desc').count.keys
+    @contests = Report.all.confirmed
   end
   
   def about

@@ -16,10 +16,10 @@
 		%span share* konkursu organizētāju
 		plakāts
 	.reports_wrap
-		- @votes.each do |report_name|
+		- @contests.each do |contest|
 			%span.report
-				%a{ :href => "/reports/#{report_name}" }
-					= "#{report_name},"
+				%a{ :href => "/reports/#{contest.name}" }
+					= "#{contest.name},"
 	%a.button.ajax_link{ :href => new_report_path }
 		Pievienot
 	%h3
