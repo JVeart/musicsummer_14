@@ -3,6 +3,11 @@
 	margin-top: 100px;
 	margin-bottom: 160px;
 }
+.calendar > div
+{
+	width: 800px;
+	margin: 0 auto;
+}
 .calendar .festivals a
 {
 	color: #25ae5f;

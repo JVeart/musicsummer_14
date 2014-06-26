@@ -1,8 +1,8 @@
 class ArtistsController < ApplicationController
   
   def show
-    voted = Vote.where( "artist = ? AND user_id = ?", params[:id], current_user.id ).first
-    all_votes = Vote.where( "artist = ?", params[:id] )
+    voted = !current_user.blank? ? Vote.where( "artist = ? AND user_id = ?", params[:id], current_user.id ).first : nil
+    all_votes = Vote.where( "artist = ? AND youtube_link IS NOT NULL", params[:id] )
     @artist = all_votes.limit(1).offset( rand( all_votes.count ) )[0]
     
     respond_to do |format|

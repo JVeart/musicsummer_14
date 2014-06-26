@@ -1,6 +1,7 @@
 jQuery(function()
 {
 	var container = jQuery('.container');
+	var overlay = container.find('.overlay');
 	
 	// input handlers
 	container.on('focus','.new_vote .song input, .new_vote .festival input', function()
@@ -101,7 +102,6 @@ jQuery(function()
 	container.on('submit','.new_vote',function()
 	{
 		var form = jQuery(this);
-		
 		jQuery.ajax
 		({
 			type: 'POST',
@@ -111,7 +111,10 @@ jQuery(function()
 			dataType: 'json',
 			success: function( result )
 			{
-				//console.log(result);
+				if(result.success == true)
+				{
+					load_success_page( form.find('.artist_search').val() );
+				}
 			},
 			error: function()
 			{
@@ -122,5 +125,24 @@ jQuery(function()
 		
 		return false;	
 	});
+	
+	// after create
+	var load_success_page = function(artist)
+	{
+		jQuery.ajax
+		({
+			format: 'json',
+			url:  '/music/success?ajax=1&artist='+artist,
+			success: function( result )
+			{
+				overlay.addClass('visible');
+				overlay.html(result);
+			},
+			error: function()
+			{
+				//
+			}
+		});
+	};
 	
 });

@@ -228,6 +228,11 @@
 {
 	color: #a09f9f;
 }
+.overlay
+{
+	overflow: hidden;
+	height: 0;
+}
 .overlay.visible
 {
     background-color: rgba(231, 231, 231, 0.9);
@@ -311,6 +316,7 @@
     right: 0;
     top: 0;
     width: 68px;
+	cursor: pointer;
 }
 .player .vote.liked
 {

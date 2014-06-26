@@ -39,7 +39,7 @@ jQuery(function()
 	artists.on('click', function()
 	{
 		var target = jQuery(this);
-		
+
 		jQuery.ajax
 		({
 			format: 'json',
@@ -202,7 +202,7 @@ jQuery(function()
 		}
 	});
 	
-	container.on('click', '.vote', function()
+	container.on('click', '.player .vote', function()
 	{
 		var target = jQuery(this);
 		
@@ -226,6 +226,21 @@ jQuery(function()
 			}
 		});
 		
+	});
+	
+	container.on('click', '.overlay', function(e)
+	{
+		var target = jQuery(this);
+		var event_target = jQuery(e.target);
+		if ( target[0] == event_target[0] || target.children('div')[0] == event_target[0] )
+		{
+			overlay.removeClass('visible');
+		}
+	});
+	
+	container.on('click', '.start_player', function()
+	{
+		container.find( '.artists .artist a' ).first().trigger('click');
 	});
 	
 });

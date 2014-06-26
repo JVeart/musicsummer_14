@@ -1,0 +1,17 @@
+.share
+	%h1
+		Pievienots!
+	%p
+		Dodam linku un brīvību tev pašam izvēlēties ko vēlies rakstīt, lai aizsūtītu mūzikas vasaru draugam
+		Skype, WhatsApp, Facebook, Twitter vai citādi.
+	.links
+		.share_link
+			%input.copy_field{ :value => 'http://musicsummer.lv/music/#'+params[:artist] }
+				
+			.button
+				Iezīmēt linku
+		.hashtag
+			%input.copy_field{ :value => '#manavasara'}
+			.button
+				Iezīmēt haštagu
+		.clear

@@ -18,11 +18,13 @@ Rails.application.routes.draw do
   get 'muzika' => 'music#index'
   get 'music' => 'music#index'
   get 'music/about' => 'music#about'
+  get 'music/success' => 'music#success'
   get 'music/sign_in' => 'users#sign_in'
   
   get 'manifests' => 'manifest#index'
   get 'manifest' => 'manifest#index'
   get 'manifest/about' => 'manifest#about'
+  get 'manifest/success' => 'manifest#success'
   get 'manifest/sign_in' => 'users#sign_in'
   
   get 'rules' => 'rules#index'
