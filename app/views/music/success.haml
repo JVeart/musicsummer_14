@@ -6,7 +6,7 @@
 		Skype, WhatsApp, Facebook, Twitter vai citādi.
 	.links
 		.share_link
-			%input.copy_field{ :value => 'http://musicsummer.lv/music/#'+params[:artist] }
+			%input.copy_field{ :value => 'http://musicsummer.lv/music/#'+ ( !params[:artist].blank? ? params[:artist] : '' ) }
 				
 			.button
 				Iezīmēt linku

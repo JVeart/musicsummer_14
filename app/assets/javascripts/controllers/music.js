@@ -3,9 +3,8 @@ jQuery(function()
 	var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
 	var container = jQuery('.container');
 	
-	var copy_buttons = container.find('.share .button');
+	
 	var top_link = container.find('.top_link');
-	var copy_field = container.find('.copy_field');
 	
 	var links = container.find( '.ajax_link' );
 	var artists = container.find( '.artists .artist a' );
@@ -58,13 +57,13 @@ jQuery(function()
 	});
 	
 	// share buttons
-	copy_buttons.click(function()
+	container.on('click','.share .button', function()
 	{
 		var target = jQuery(this);
 		target.siblings('.copy_field').trigger('click'); 
 	});
 	
-	copy_field.click(function()
+	container.on('click','.copy_field', function()
 	{
 		if(iOS)
 		{

@@ -240,8 +240,17 @@
     position: absolute;
     top: 0;
     width: 100%;
+	z-index: 99;
 }
-
+.overlay >div
+{
+	position: relative;
+	z-index: 1;
+}
+.overlay .share
+{
+	margin-top: 400px;
+}
 .player
 {
 	display: none;
