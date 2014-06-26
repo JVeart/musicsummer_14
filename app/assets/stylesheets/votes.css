@@ -1,14 +1,14 @@
-.new_vote
+.overlay .vote
 {
 	width: 800px;
 	margin: 400px auto 50px;
 }
 
-.new_vote > div
+.overlay .vote > div
 {
 	position: relative;
 }
-.new_vote label
+.overlay .vote label
 {
 	background-position: center center;
     background-repeat: no-repeat;
@@ -19,16 +19,16 @@
 	margin-right: 75px;
 	margin-left: 100px;
 }
-.new_vote .song label,
-.new_vote .artist label
+.overlay .vote .song label,
+.overlay .vote .artist label
 {
 	background-image: url('/assets/note.svg');
 }
-.new_vote .festival label
+.overlay .vote .festival label
 {
 	background-image: url('/assets/map_marker.svg');
 }
-.new_vote input[type="text"]
+.overlay .vote input[type="text"]
 {
 	background-color: transparent;
 	border: 0;
@@ -39,12 +39,12 @@
 	line-height: 38px;
 	margin-bottom: 50px;
 }
-.new_vote .button
+.overlay .vote .button
 {
 	float: right;
 	margin-right: 65px;
 }
-.new_vote .button input
+.overlay .vote .button input
 {
 	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: 0 none;
@@ -55,7 +55,7 @@
     height: 100%;
     width: 100%;
 }
-.new_vote .preview
+.overlay .vote .preview
 {
 	display: none;
 	background-color: #2b2d2f;
@@ -68,7 +68,7 @@
 	overflow: hidden;
 	padding: 25px 0;
 }
-.new_vote .festival .preview
+.overlay .vote .festival .preview
 {
 	height: 65px;
 	width: 535px;
@@ -76,14 +76,14 @@
 	padding-bottom: 0;
 	border-bottom: 25px solid #2b2d2f;
 }
-.new_vote .song .preview,
-.new_vote .artist .preview
+.overlay .vote .song .preview,
+.overlay .vote .artist .preview
 {
 	padding: 35px;
 	width: 595px;
 	height: 135px;
 }
-.new_vote .preview .image
+.overlay .vote .preview .image
 {
 	height: 100px;
 	width: 138px;
@@ -93,19 +93,19 @@
 	background-position: center;
 	cursor: pointer;
 }
-.new_vote .preview span
+.overlay .vote .preview span
 {
 	display: block;
 	color: #e7e7e7;
 	cursor: pointer;
 }
-.new_vote .preview span:hover
+.overlay .vote .preview span:hover
 {
 	color: #4eba6e;
 }
-.new_vote .rules_link
+.overlay .vote .rules_link
 {
 	margin-left: 100px;
 }
-.new_vote .rules_link
+.overlay .vote .rules_link
 {}

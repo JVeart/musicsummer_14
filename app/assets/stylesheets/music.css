@@ -383,3 +383,39 @@
 {
 	color: #5e6eaf;	
 }
+
+.body-manifest .overlay
+{
+	min-height: 100%;
+	height: auto;
+	color: #2b2d2f;
+}
+.overlay .share
+{
+	width: 800px;
+	margin-bottom: 60px;
+}
+.overlay .share .links
+{
+	margin-bottom: 30px;
+}
+.overlay .share .media
+{
+    text-align: center;
+}
+.overlay .share .zip_download
+{
+	margin-top: 50px;
+}
+.overlay .share img
+{
+	width: 370px;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	box-shadow: 0 3px 16px rgba(0,0,0,0.18);
+}
+.overlay .share .media_item
+{
+	float: left;
+	width: 400px;
+}

@@ -113,7 +113,7 @@ jQuery(function()
 			{
 				if(result.success == true)
 				{
-					load_success_page( form.find('.artist_search').val() );
+					load_success_page( form.find('.artist_search').val(), 'music' );
 				}
 			},
 			error: function()
@@ -126,13 +126,43 @@ jQuery(function()
 		return false;	
 	});
 	
-	// after create
-	var load_success_page = function(artist)
+	container.on('submit','.new_report',function()
 	{
+		var form = jQuery(this);
+		jQuery.ajax
+		({
+			type: 'POST',
+			format: 'json',
+			url:  form.attr('action')+'.json',
+			data: form.serialize(),
+			dataType: 'json',
+			success: function( result )
+			{
+				if(result.success == true)
+				{
+					load_success_page( form.find('.artist_search').val(), 'manifest' );
+				}
+			},
+			error: function()
+			{
+				//
+			}
+		});
+		
+		
+		return false;	
+	});
+	
+	
+	
+	// after create
+	var load_success_page = function(artist, controller)
+	{
+		var params = artist && controller == 'music' ? '&artist='+artist : '' ;
 		jQuery.ajax
 		({
 			format: 'json',
-			url:  '/music/success?ajax=1&artist='+artist,
+			url:  '/'+controller+'/success?ajax=1'+params,
 			success: function( result )
 			{
 				overlay.addClass('visible');

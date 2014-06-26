@@ -1,0 +1,37 @@
+.share
+	%h1
+		Nosūtīts!
+	%p
+		Pirms konkurs tiks pievienots plakātam,  mēs izvērtēsim vai noteikumi tiešām ir pārkāpti.
+		
+	%h1
+		Šēro, lai nešērotu!
+	%p
+		Dodam linku un brīvību tev pašam izvēlēties ko vēlies rakstīt, lai aizsūtītu mūzikas vasaru draugam
+		Skype, WhatsApp, Facebook, Twitter vai citādi.
+	.links
+		.share_link
+			%input.copy_field{ :value => 'http://musicsummer.lv/manifests' }
+				
+			.button
+				Iezīmēt linku
+		.hashtag
+			%input.copy_field{ :value => '#sharemanifests'}
+			.button
+				Iezīmēt haštagu
+		.clear
+	.media
+		.media_item
+			%img{ :src => '/LMS14_manifests.jpg' }
+			%a.button{ :href => '/LMS14_manifests.jpg', :download => true } Lejuplādēt
+		.media_item
+			%img{ :src => '/LMS14_manifest_draugiem.jpg' }
+			%a.button{ :href => '/LMS14_manifest_draugiem.jpg', :download => true } Lejuplādēt
+		.media_item
+			%img{ :src => '/LMS14_manifest_twitter.jpg' }
+			%a.button{ :href => '/LMS14_manifest_twitter.jpg', :download => true } Lejuplādēt
+		.media_item
+			%img{ :src => '/LMS14_manifest_facebook.jpg' }
+			%a.button{ :href => '/LMS14_manifest_facebook.jpg', :download => true } Lejuplādēt
+		.clear
+		%a.button.zip_download{ :href => '/LMS14_manifests.zip', :download => true } Lejuplādēt .ZIP
