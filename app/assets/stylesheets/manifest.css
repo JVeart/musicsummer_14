@@ -14,7 +14,7 @@
 	line-height: 30px;
 	font-weight: bold;
 	color: #253578;
-	margin-top: 40px;
+	margin-top: 80px;
 	margin-bottom: 100px;
 	
 }
@@ -80,6 +80,19 @@
 {
     border: 2px dashed #2d4284;
     color: #eef3f5;
+}
+.controller-manifest .manifest_icons
+{
+    background-image: url("/assets/manifest_icons.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 40px;
+    left: 50%;
+    margin-left: -140px;
+    position: absolute;
+    top: 356px;
+    width: 150px;
 }
 
 .controller-manifest .overlay.visible
