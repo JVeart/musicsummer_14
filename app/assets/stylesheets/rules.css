@@ -1,15 +1,30 @@
+.about li,
+.rules li
+{
+    list-style: decimal outside none;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+.rules ol ol li
+{
+	list-style: upper-latin;
+	margin-left: 30px;
+}
+.about,
 .rules
 {
 	padding-top: 100px;
 	width: 670px;
 	margin: 0 auto;
 }
+.about h1,
 .rules h1
 {
-	font-size: 38px;
-	line-height: 30px;
+	font-size: 34px;
+	line-height: 38px;
 	text-align: left;
 }
+.about p,
 .rules p
 {
 	font-size: 18px;
@@ -17,6 +32,7 @@
 	margin: 30px 0;
 	font-weight: 500;
 }
+.about p.thin,
 .rules p.thin
 {
 	font-weight: normal;

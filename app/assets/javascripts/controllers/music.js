@@ -7,7 +7,6 @@ jQuery(function()
 	var top_link = container.find('.top_link');
 	
 	var links = container.find( '.ajax_link' );
-	var artists = container.find( '.artists .artist a' );
 	var overlay = container.find( '.overlay' );
 	var player_container = container.find( '.player' );
 	
@@ -35,7 +34,7 @@ jQuery(function()
 		return false;	
 	});
 	
-	artists.on('click', function()
+	container.on('click', '.artist a', function()
 	{
 		var target = jQuery(this);
 

@@ -1,0 +1,4 @@
+- @votes.each do |artist_name|
+	%span.artist
+		%a{ :href => "/artists/#{artist_name}" }
+			= "#{artist_name},"

@@ -126,6 +126,7 @@ body
 	color: #a09f9f;
 	font-family:  open_sans, Helvetica, Arial, sans-serif;
 	font-weight: 500;
+	background-repeat: no-repeat;
 }
 .controller-landing .manifest,
 .body-manifest

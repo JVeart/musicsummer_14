@@ -236,11 +236,12 @@
 .overlay.visible
 {
     background-color: rgba(231, 231, 231, 0.9);
-    height: 100%;
+    height: auto;
+    min-height: 100%;
     position: absolute;
     top: 0;
     width: 100%;
-	z-index: 99;
+    z-index: 99;
 }
 .overlay >div
 {
@@ -398,6 +399,14 @@
 .overlay .share .links
 {
 	margin-bottom: 30px;
+}
+.overlay .share input
+{
+	background-color: #eeeded;
+}
+.body-manifest .overlay .share input
+{
+	background-color: transparent;
 }
 .overlay .share .media
 {

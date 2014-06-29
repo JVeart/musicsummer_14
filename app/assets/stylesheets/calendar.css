@@ -1,7 +1,8 @@
 .calendar
 {
-	margin-top: 100px;
-	margin-bottom: 160px;
+	padding-top: 100px;
+	padding-bottom: 160px;
+	background-color: #ececec;
 }
 .calendar > div
 {

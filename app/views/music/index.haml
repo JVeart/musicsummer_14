@@ -22,10 +22,7 @@
 		%span gaidītāko mākslinieku
 		plakāts
 	.artists_wrap
-		- @votes.each do |artist_name|
-			%span.artist
-				%a{ :href => "/artists/#{artist_name}" }
-					= "#{artist_name},"
+		= render 'artists'
 	%a.button.ajax_link{ :href => new_vote_path }
 		Pievienot
 	%h3

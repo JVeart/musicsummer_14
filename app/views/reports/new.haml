@@ -3,18 +3,16 @@
 	= form_for @report do |f|
 		.link
 			%label{ :for => 'report_contest_link'}
-			= f.text_field :contest_link, :placeholder=>'Pieķertā share* konkursa links ', :class => :report_link
-		.name
-			%label{ :for => 'report_name'}
-			= f.text_field :name, :placeholder=>'Kas rīko šo konkursu?', :class => :report_name
+			= f.text_field :contest_link, :placeholder=>'Pieķertā share* konkursa links ', :class => :report_link, :autocomplete => 'off'
 		.contact
-			%label{ :for => 'user_contact_email'}
 			= f.fields_for :user, @report.user do |u|
-				= u.text_field :contact_mail, :placeholder=>'Kā ar tevi sazināties, uzvaras gadījumā?'
+				%label.check_box{ :for => 'user_contact_email', :class => ( !@report.user.contact_mail.blank? ? 'active' : '') }
+				= u.text_field :contact_mail, :placeholder=>'Kā ar tevi sazināties, uzvaras gadījumā?', :class => 'contact_mail', :autocomplete => 'off'
 		.rules_link
-			= check_box :rules, :read
+			%label.check_box{ :for => 'rules_read'}
+			= check_box :rules, :read, :class => 'rules_check'
 			Tava paša atbildība
-			%a{ :href => '/rules' } izlasīt noteikumus
+			%a.ajax_link{ :href => '/rules' } izlasīt noteikumus
 		.button
 			= f.submit :value => 'Saglabāt'
 		.clear

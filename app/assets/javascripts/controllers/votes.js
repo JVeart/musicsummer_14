@@ -31,6 +31,18 @@ jQuery(function()
 		festival_results( target.val() );
 	});
 	
+	container.on('change', '.rules_check', function()
+	{
+		var target = jQuery(this);
+		target.siblings('label').toggleClass( 'active', target.prop('checked') );
+	});
+	
+	container.on('input', '.contact_mail', function()
+	{
+		var target = jQuery(this);
+		target.siblings('label').toggleClass( 'active', target.val().trim().length > 0  );
+	});
+	
 	// search handlers
 	var festival_results = function( search_for )
 	{
@@ -75,12 +87,11 @@ jQuery(function()
 		{
 			video_list.forEach(function(video)
 			{
-				preview_container.append('<div class="image search_result" data-video_id="'+ video.id +'" style="background-image:url(\''+ video.thumbnail.hqDefault +'\')" title="'+ video.title +'">');
+				preview_container.append('<div class="image search_result" data-video_id="'+ video.id +'" style="background-image:url(\''+ video.thumbnail.hqDefault +'\')" title="'+ video.title +'"></div>');
 			});
 		}
 		
 	};
-	
 	
 	// result click handlers
 	container.on('click','.song .search_result', function()
@@ -97,63 +108,57 @@ jQuery(function()
 		container.find('.new_vote .festival_id').val( target.attr('data-festival_id') );
 	});
 	
-	// validation
-	
-	container.on('submit','.new_vote',function()
+	// validation and ajax form submit
+	container.on('submit','.new_vote, .new_report',function()
 	{
 		var form = jQuery(this);
-		jQuery.ajax
-		({
-			type: 'POST',
-			format: 'json',
-			url:  form.attr('action')+'.json',
-			data: form.serialize(),
-			dataType: 'json',
-			success: function( result )
-			{
-				if(result.success == true)
-				{
-					load_success_page( form.find('.artist_search').val(), 'music' );
-				}
-			},
-			error: function()
-			{
-				//
-			}
-		});
+		form.find('.invalid').removeClass('invalid');
 		
+		var controller = form.is('.new_vote') ? 'music' : 'manifest';
+		var rules = form.find('.rules_check');
+		var required_fields = controller == 'music' ? form.find('.artist_search, .video_search, .festival_search') : form.find('.report_link');
+		var empty_fields = required_fields.filter(function(){
+			return this.value == false;
+		});
+
+		if ( rules.prop('checked') && !empty_fields.length )
+		{
+			jQuery.ajax
+			({
+				type: 'POST',
+				format: 'json',
+				url:  form.attr('action')+'.json',
+				data: form.serialize(),
+				dataType: 'json',
+				success: function( result )
+				{
+					if(result.success == true)
+					{
+						load_success_page( form.find('.artist_search').val(), controller );
+					}
+				},
+				error: function()
+				{
+					//
+				}
+			});
+		}
+		else
+		{
+			empty_fields.each(function()
+			{
+				var target = jQuery(this);
+				target.parent().addClass('invalid');
+			});
+			
+			if (!rules.prop('checked'))
+			{
+				rules.parent().addClass('invalid');
+			}
+		}
 		
 		return false;	
 	});
-	
-	container.on('submit','.new_report',function()
-	{
-		var form = jQuery(this);
-		jQuery.ajax
-		({
-			type: 'POST',
-			format: 'json',
-			url:  form.attr('action')+'.json',
-			data: form.serialize(),
-			dataType: 'json',
-			success: function( result )
-			{
-				if(result.success == true)
-				{
-					load_success_page( form.find('.artist_search').val(), 'manifest' );
-				}
-			},
-			error: function()
-			{
-				//
-			}
-		});
-		
-		
-		return false;	
-	});
-	
-	
 	
 	// after create
 	var load_success_page = function(artist, controller)
@@ -167,6 +172,24 @@ jQuery(function()
 			{
 				overlay.addClass('visible');
 				overlay.html(result);
+				reload_artists();
+			},
+			error: function()
+			{
+				//
+			}
+		});
+	};
+	
+	var reload_artists = function()
+	{
+		jQuery.ajax
+		({
+			format: 'json',
+			url:  '/music?ajax=1',
+			success: function( result )
+			{
+				container.find('.artists_wrap').html(result);
 			},
 			error: function()
 			{
