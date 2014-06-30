@@ -1,3 +1,50 @@
+.about,
+.rules
+{
+	background-color: #ececec;
+	margin-top: 50px;
+	position: relative;
+	padding-bottom: 100px;
+}
+.about p,
+.rules p
+{
+	width: auto;
+	text-align: justify;
+}
+.about:after,
+.rules:after
+{
+	content: "";
+	position: absolute;
+	top: -40px;
+	left: 50%;
+	margin-left: 335px;
+	background-image: url('/assets/close.svg');
+	background-repeat: no-repeat;
+	background-size: auto;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+.body-manifest .about:after,
+.body-manifest .rules:after
+{
+	background-image: url('/assets/close_white.svg');
+}
+.about_wrap,
+.rules_wrap
+{
+	padding-top: 50px;
+	width: 670px;
+	margin: 0 auto;
+}
+.body-manifest .about,
+.body-manifest .rules
+{
+	background-color: #e5eaff;
+}
+
 .about li,
 .rules li
 {
@@ -9,13 +56,6 @@
 {
 	list-style: upper-latin;
 	margin-left: 30px;
-}
-.about,
-.rules
-{
-	padding-top: 100px;
-	width: 670px;
-	margin: 0 auto;
 }
 .about h1,
 .rules h1
