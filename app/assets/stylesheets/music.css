@@ -408,14 +408,18 @@
 {
 	background-color: transparent;
 }
+.overlay .about .media,
 .overlay .share .media
 {
     text-align: center;
 }
+.overlay .about .zip_download,
 .overlay .share .zip_download
 {
 	margin-top: 50px;
+	margin-bottom: 60px;
 }
+.overlay .about img,
 .overlay .share img
 {
 	width: 370px;
@@ -423,8 +427,17 @@
 	margin-top: 50px;
 	box-shadow: 0 3px 16px rgba(0,0,0,0.18);
 }
+.overlay .about img
+{
+	width: 305px;
+}
 .overlay .share .media_item
 {
 	float: left;
 	width: 400px;
+}
+.overlay .about .media_item
+{
+	float: left;
+	width: 335px;
 }
