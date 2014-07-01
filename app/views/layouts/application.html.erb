@@ -28,6 +28,9 @@
   <div class="container page_container controller-<%= controller.controller_name %> action-<%= controller.action_name %>">
     <%= yield %>
   </div>
+  <% if controller.controller_name == 'music' || controller.controller_name == 'manifest'  %>
+    <%= render 'share' %>
+  <% end %>
   <footer class="controller-<%= controller.controller_name %>">
     Latvian Music Summer © 2014
     <br>

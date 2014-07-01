@@ -152,13 +152,13 @@ body
 }
 
 .controller-landing .manifest ::selection,
-.controller-manifest ::selection
+.body-manifest ::selection
 {
 	background: #c13a2c; /* Safari */
 	color: #F6F6F6;
 }
 .controller-landing .manifest ::-moz-selection,
-.controller-manifest ::-moz-selection
+.body-manifest ::-moz-selection
 {
 	background: #c13a2c; /* Firefox */
 	color: #F6F6F6;
@@ -203,21 +203,22 @@ a:hover
 {
 	color: #c1c1c1;
 }
-.controller-manifest h1 span
+.body-manifest h1 span
 {
 	color: #5e6eaf;
 }
 
-.controller-manifest a
+.body-manifest a
 {
 	color: #253578;
 }
-.controller-manifest a:hover
+.body-manifest a:hover
 {
 	color: #5e6eaf;
 }
 a.button,
 .product_button,
+.body-manifest .second_footer .button,
 .button
 {
 	padding: 0;
@@ -245,6 +246,7 @@ a.button,
 }
 
 a.button:hover,
+.body-manifest .second_footer .button:hover,
 .button:hover
 {
 	color: #F6F6F6;
@@ -253,11 +255,13 @@ a.button:hover,
 }
 
 a.button:active,
+.body-manifest .second_footer .button:active,
 .button:active
 {
 	margin-top: 5px;
 	margin-bottom: 0px;
 }
+.body-manifest .second_footer .button:before,
 .button:before
 {
     background-color: #289656;
@@ -273,10 +277,12 @@ a.button:active,
 	-webkit-transition: all 0.05s linear 0s;
 }
 
+.body-manifest .second_footer .button:hover:before,
 .button:hover:before
 {
     bottom: -5px;
 }
+.body-manifest .second_footer .button:active:before,
 .button:active:before
 {
     bottom: 0;
@@ -284,14 +290,14 @@ a.button:active,
 .manifest a.button,
 .manifest .product_button,
 .manifest .button,
-.controller-manifest a.button,
-.controller-manifest .product_button,
-.controller-manifest .button
+.body-manifest a.button,
+.body-manifest .product_button,
+.body-manifest .button
 {
 	background-color: #c13a2c;
 }
 .manifest .button:before,
-.controller-manifest .button:before
+.body-manifest .button:before
 {
     background-color: #9b2b23;
 }

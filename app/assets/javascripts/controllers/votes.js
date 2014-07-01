@@ -41,6 +41,7 @@ jQuery(function()
 	{
 		var target = jQuery(this);
 		target.siblings('label').toggleClass( 'active', target.val().trim().length > 0  );
+		container.find('.contact').toggleClass('valid', target.val().trim().length > 0  );
 	});
 	
 	// search handlers
@@ -99,6 +100,7 @@ jQuery(function()
 		var target = jQuery(this);
 		container.find('.new_vote .video_search').val( target.attr('title') );
 		container.find('.new_vote .youtube_link').val( target.attr('data-video_id') );
+		container.find('.new_vote .song').addClass('valid');
 	});
 	
 	container.on('click','.festival .preview span', function()
@@ -106,6 +108,7 @@ jQuery(function()
 		var target = jQuery(this);
 		container.find('.new_vote .festival_search').val( target.html() );
 		container.find('.new_vote .festival_id').val( target.attr('data-festival_id') );
+		container.find('.new_vote .festival').addClass('valid');
 	});
 	
 	// validation and ajax form submit

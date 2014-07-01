@@ -1,18 +1,19 @@
 .calendar
 {
-	margin-top: 50px;
 	padding-top: 100px;
 	padding-bottom: 160px;
-	background-color: #ececec;
 	position: relative;
 }
-.calendar:after
+.overlay .calendar
+{
+	background-color: #f3f3f3;
+}
+.overlay .calendar:after
 {
 	content: "";
 	position: absolute;
 	top: -40px;
-	left: 50%;
-	margin-left: 335px;
+	right: 10px;
 	background-image: url('/assets/close.svg');
 	background-repeat: no-repeat;
 	background-size: auto;

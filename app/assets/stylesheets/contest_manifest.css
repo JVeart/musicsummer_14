@@ -68,20 +68,20 @@
 {
 	color: #c13a2c;
 }
-.controller-manifest .products .drawing_spot
+.body-manifest .products .drawing_spot
 {
 	border: 2px dashed #2d4284;
 }
-.controller-manifest .products .product:before
+.body-manifest .products .product:before
 {
     background-color: #9b2b23;
 }
-.controller-manifest .share .copy_field
+.body-manifest .share .copy_field
 {
     border: 2px dashed #2d4284;
     color: #eef3f5;
 }
-.controller-manifest .manifest_icons
+.body-manifest .manifest_icons
 {
     background-image: url("/assets/contest_manifest_icons.svg");
     background-position: center center;
@@ -96,7 +96,7 @@
 	z-index: -1;
 }
 
-.controller-manifest .overlay.visible
+.body-manifest .overlay.visible
 {
     background-color: rgba(59, 89, 153, 0.9);
 }

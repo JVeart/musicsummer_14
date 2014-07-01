@@ -4,15 +4,15 @@ jQuery(function()
 	var container = jQuery('.container');
 	
 	
-	var top_link = container.find('.top_link');
+	var top_link = jQuery('body').find('.top_link');
 	
-	var links = container.find( '.ajax_link' );
 	var overlay = container.find( '.overlay' );
 	var player_container = container.find( '.player' );
 	
+	var scroll_pos = 0;
 	// button overrides
 	
-	links.on('click', function()
+	jQuery('body').on('click', '.ajax_link', function()
 	{
 		var target = jQuery(this);
 		
@@ -22,7 +22,12 @@ jQuery(function()
 			url:  target.attr('href')+'?ajax=1',
 			success: function( result )
 			{
+				scroll_pos = jQuery('body,html').scrollTop();
+				jQuery('body,html').animate({scrollTop: 0},300);
 				overlay.addClass('visible');
+				var controller_path = target.attr('href').split('/');
+				var controller_name = controller_path[controller_path.length];
+				overlay.attr('data-controller', controller_name);
 				overlay.html(result);
 			},
 			error: function()
@@ -56,13 +61,13 @@ jQuery(function()
 	});
 	
 	// share buttons
-	container.on('click','.share .button', function()
+	jQuery('body').on('click','.share .button', function()
 	{
 		var target = jQuery(this);
 		target.siblings('.copy_field').trigger('click'); 
 	});
 	
-	container.on('click','.copy_field', function()
+	jQuery('body').on('click','.copy_field', function()
 	{
 		if(iOS)
 		{
@@ -196,6 +201,7 @@ jQuery(function()
 		if ( !target.is('.player') && target.parents('.player').length != 1 )
 		{
 			player_container.removeClass( 'visible' );
+			
 			player_container.find('.video').html('<div id="player"></div>');
 		}
 	});
@@ -232,6 +238,7 @@ jQuery(function()
 		var event_target = jQuery(e.target);
 		if ( target[0] == event_target[0] || target.children('div')[0] == event_target[0] )
 		{
+			jQuery('body,html').animate({scrollTop: scroll_pos },300);
 			overlay.removeClass('visible');
 		}
 	});

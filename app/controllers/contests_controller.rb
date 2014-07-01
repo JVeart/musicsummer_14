@@ -1,4 +1,4 @@
-class ArtistsController < ApplicationController
+class ContestsController < ApplicationController
   
   def show
     @contest = Report.where( 'name = ?', params[:id] )
