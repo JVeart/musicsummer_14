@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  root 'landing#index'
+  root 'coming_soon#index'
   
   resources :votes, :only => [ :new, :create]
   resources :artists, :only => [ :show ] do
