@@ -119,7 +119,7 @@ jQuery(function()
 		
 		var controller = form.is('.new_vote') ? 'music' : 'manifest';
 		var rules = form.find('.rules_check');
-		var required_fields = controller == 'music' ? form.find('.artist_search, .video_search, .festival_search') : form.find('.report_link');
+		var required_fields = controller == 'music' ? form.find('.artist_search, .video_search, .festival_search, .youtube_link, .felstival_id') : form.find('.report_link');
 		var empty_fields = required_fields.filter(function(){
 			return this.value == false;
 		});
