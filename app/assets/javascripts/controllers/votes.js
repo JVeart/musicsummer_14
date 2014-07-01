@@ -35,6 +35,7 @@ jQuery(function()
 	{
 		var target = jQuery(this);
 		target.siblings('label').toggleClass( 'active', target.prop('checked') );
+		container.find('.rules_link').toggleClass('valid', target.prop('checked')  );
 	});
 	
 	container.on('input', '.contact_mail', function()
