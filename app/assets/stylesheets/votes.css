@@ -1,11 +1,16 @@
 .overlay .vote
 {
-	width: 800px;
-	margin: 100px auto 50px;
+	
 	font-size: 20px;
 	font-weight: 500;
+	padding-top: 100px;
 }
 
+.overlay .vote form
+{
+	width: 800px;
+	margin: 0 auto 50px;
+}
 .overlay .vote form > div
 {
 	position: relative;

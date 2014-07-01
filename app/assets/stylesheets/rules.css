@@ -22,6 +22,8 @@
 {
 	color: #24AE5E;
 }
+.vote:after,
+.sign_in:after,
 .about:after,
 .rules:after
 {
@@ -36,6 +38,8 @@
 	height: 30px;
 	cursor: pointer;
 }
+.body-manifest .vote:after,
+.body-manifest .sign_in:after,
 .body-manifest .about:after,
 .body-manifest .rules:after
 {
