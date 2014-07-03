@@ -31,11 +31,17 @@ jQuery(function()
 		festival_results( target.val() );
 	});
 	
+	container.on('click', '.participant_text', function()
+	{
+		container.find('.participant_check').trigger('click');
+	});
+	
 	container.on('change', '.rules_check, .participant_check', function()
 	{
 		var target = jQuery(this);
 		target.siblings('label').toggleClass( 'active', target.prop('checked') );
 		target.parent().toggleClass('valid', target.prop('checked')  );
+		
 	});
 	
 	container.on('input', '.contact_mail', function()
