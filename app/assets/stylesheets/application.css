@@ -236,8 +236,6 @@ a.button,
     text-align: center;
     width: 190px;
 	margin-top: 5px;
-	transition: all 0.05s linear 0s;
-	-webkit-transition: all 0.05s linear 0s;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	user-select: none;
@@ -273,8 +271,6 @@ a.button:active,
     position: absolute;
     width: 100%;
     z-index: -1;
-	transition: all 0.05s linear 0s;
-	-webkit-transition: all 0.05s linear 0s;
 }
 
 .body-manifest .second_footer .button:hover:before,

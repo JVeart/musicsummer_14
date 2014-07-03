@@ -20,7 +20,8 @@
 	margin-right: auto;
 	padding-top: 35px;
 }
-.overlay .vote form > div:after
+.overlay .vote form > div.valid:after
+.overlay .vote form > div.invalid:after
 {
     background-position: center center;
     background-repeat: no-repeat;
@@ -28,7 +29,7 @@
     height: 30px;
     position: absolute;
     right: -40px;
-    top: 35px;
+    top: 37px;
     width: 30px;
 }
 .overlay .vote form > div.valid:after
@@ -64,6 +65,7 @@
     margin-right: 75px;
     vertical-align: middle;
     width: 30px;
+	margin-top: -5px;
 }
 .overlay .vote .song label,
 .overlay .vote .artist label
@@ -86,13 +88,23 @@
 {
 	background-image: url('/assets/check_full.svg');
 }
+.overlay .participant input[type="checkbox"],
 .overlay .rules_link input[type="checkbox"]
 {
 	display: none;
 }
+.overlay .participant,
+.overlay .rules_link
+{
+	font-weight: bold;
+}
 .overlay .rules_link
 {
 	margin-bottom: 60px;
+}
+.overlay .rules_link a
+{
+	font-size: 20px;
 }
 .overlay .vote input[type="text"]
 {
@@ -101,7 +113,7 @@
     color: #a09f9f;
     font-size: 20px;
     font-weight: bold;
-    line-height: 38px;
+    line-height: 35px;
     margin-bottom: 0;
     width: 500px;
 }
@@ -114,6 +126,20 @@
 .overlay .vote .valid input[type="text"]
 {
 	color: #2b2d2f;
+}
+.overlay .vote .invalid input[type="text"]::-webkit-input-placeholder,
+.overlay .vote .valid input[type="text"]::-webkit-input-placeholder
+{
+	color: #813A34;
+}
+.body-manifest .overlay .vote input[type="text"]::-webkit-input-placeholder
+{
+	color: #2b2d2f;
+}
+.body-manifest .overlay .vote .invalid input[type="text"]::-webkit-input-placeholder,
+.body-manifest .overlay .vote .valid input[type="text"]::-webkit-input-placeholder
+{
+	color: #813A34;
 }
 .overlay .vote .button
 {

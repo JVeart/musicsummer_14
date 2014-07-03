@@ -31,11 +31,11 @@ jQuery(function()
 		festival_results( target.val() );
 	});
 	
-	container.on('change', '.rules_check', function()
+	container.on('change', '.rules_check, .participant_check', function()
 	{
 		var target = jQuery(this);
 		target.siblings('label').toggleClass( 'active', target.prop('checked') );
-		container.find('.rules_link').toggleClass('valid', target.prop('checked')  );
+		target.parent().toggleClass('valid', target.prop('checked')  );
 	});
 	
 	container.on('input', '.contact_mail', function()
@@ -61,7 +61,6 @@ jQuery(function()
 	var youtube_results = function( search_for, result_list )
 	{
     var url = "http://gdata.youtube.com/feeds/api/videos/?v=2&alt=jsonc&callback=?";
-    url = url + '&paid-content=false';
     url = url + '&orderby=viewCount';
     url = url + '&max-results=4';
 		
@@ -102,6 +101,13 @@ jQuery(function()
 		container.find('.new_vote .video_search').val( target.attr('title') );
 		container.find('.new_vote .youtube_link').val( target.attr('data-video_id') );
 		container.find('.new_vote .song').addClass('valid');
+		container.find('.artist').toggleClass('valid', container.find('.artist_search').val().trim().length > 0   );
+		container.find('.artist').toggleClass('invalid', container.find('.artist_search').val().trim().length == 0   );
+		container.on('input', '.artist_search', function()
+		{
+			var target = jQuery(this);
+			container.find('.artist').toggleClass('valid', target.val().trim().length > 0   );
+		});
 	});
 	
 	container.on('click','.festival .preview span', function()

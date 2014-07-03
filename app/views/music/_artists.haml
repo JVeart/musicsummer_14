@@ -1,4 +1,4 @@
 - @votes.each do |artist_name|
 	%span.artist
-		%a{ :href => "/artists/#{artist_name}" }
+		%a{ :href => "/artists/#{artist_name.gsub(" ", "-")}" }
 			= "#{artist_name},"

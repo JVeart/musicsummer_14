@@ -16,10 +16,14 @@
 			.preview
 				- @festivals.each do |festival|
 					%span{ 'data-festival_id' => festival.id }= festival.name
+		.participant
+			%label.check_box{ :for => 'patricipate_true'}
+			= check_box :patricipate, :true, :class => 'participant_check'
+			Kliko, ja vēlies piedalīties loterijā par biļētēm
 		.contact{ :class => ( !@vote.user.contact_mail.blank? ? 'valid' : '' ) }
 			= f.fields_for :user, @vote.user do |u|
 				%label.check_box{ :for => 'user_contact_email', :class => ( !@vote.user.contact_mail.blank? ? 'active' : '' ) }
-				= u.text_field :contact_mail, :placeholder=>'Atstāj kontaktus, ja vēlies piedalīties izlozē!', :class => 'contact_mail', :autocomplete => 'off'
+				= u.text_field :contact_mail, :placeholder=>'Kā ar tevi sazināties, uzvaras gadījumā?', :class => 'contact_mail', :autocomplete => 'off'
 		.rules_link
 			%label.check_box{ :for => 'rules_read'}
 			= check_box :rules, :read, :class => 'rules_check'

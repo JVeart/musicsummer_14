@@ -4,10 +4,15 @@
 		.link
 			%label{ :for => 'report_contest_link'}
 			= f.text_field :contest_link, :placeholder=>'Pieķertā share* konkursa links ', :class => :report_link, :autocomplete => 'off'
+		
+		.participant
+			%label.check_box{ :for => 'participate_true,'}
+			= check_box :participate, :true, :class => 'participant_check'
+			Kliko, ja vēlies piedalīties loterijā par biļētēm
 		.contact{ :class => ( !@report.user.contact_mail.blank? ? 'valid' : '' ) }
 			= f.fields_for :user, @report.user do |u|
 				%label.check_box{ :for => 'user_contact_email', :class => ( !@report.user.contact_mail.blank? ? 'active' : '') }
-				= u.text_field :contact_mail, :placeholder=>'Atstāj kontaktus, ja vēlies piedalīties izlozē!', :class => 'contact_mail', :autocomplete => 'off'
+				= u.text_field :contact_mail, :placeholder=>'Kā ar tevi sazināties, uzvaras gadījumā?', :class => 'contact_mail', :autocomplete => 'off'
 		.rules_link
 			%label.check_box{ :for => 'rules_read'}
 			= check_box :rules, :read, :class => 'rules_check'

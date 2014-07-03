@@ -90,10 +90,42 @@ jQuery(function()
 	
 	// player
 	
+	var check_hash = function()
+	{
+		if ( window.location.hash )
+		{
+			setTimeout(function()
+			{
+				container.find( '.artists .artist a[href$="'+window.location.hash.substr(1)+'"]' ).trigger('click');
+				history.pushState(null, null, window.location.href.split('#')[0]);
+			},500);
+			
+		}	
+	};
+	
 	var tag = document.createElement('script');
+	
+	if(tag.readyState)
+	{  //IE
+    tag.onreadystatechange = function()
+		{
+      if ( tag.readyState === "loaded" || tag.readyState === "complete" ) {
+        tag.onreadystatechange = null;
+        check_hash();
+      }
+    };
+  }
+	else
+	{  //Others
+    tag.onload = function() {
+      check_hash();
+			
+    };
+  }
 	tag.src = "https://www.youtube.com/iframe_api";
 	var firstScriptTag = document.getElementsByTagName('script')[0];
 	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	
 	var player;
 	var video_ids = [];
 	
@@ -190,8 +222,11 @@ jQuery(function()
 		player_container.find( '.vote' ).toggleClass('liked', item.liked );
 		
 		video_ids = [item.youtube_link];
-		onYouTubeIframeAPIReady();
+		while(typeof YT === 'undefined')
+		{
 		
+		}
+		onYouTubeIframeAPIReady();
 	};
 	
 	container.click(function(e)
@@ -222,6 +257,27 @@ jQuery(function()
 					var count = target.find('.count');
 					count.html( count.html()*1 + 1 );
 					target.addClass('liked');
+				}
+				else if (!result.success && result.errors.sign_in == false )
+				{
+					jQuery.ajax
+					({
+						format: 'json',
+						url:  '/music/sign_in?ajax=1',
+						success: function( result )
+						{
+							scroll_pos = jQuery('body,html').scrollTop();
+							jQuery('body,html').animate({scrollTop: 0},300);
+							overlay.addClass('visible');
+							var controller_name = 'sign_in'
+							overlay.attr('data-controller', controller_name);
+							overlay.html(result);
+						},
+						error: function()
+						{
+							//
+						}
+					});
 				}
 			},
 			error: function()
