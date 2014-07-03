@@ -2,7 +2,7 @@
 
 Latvian Music Summer ir brīva, atvērta platforma veltīta Latvijas mūzikas festivālu sezonai un pieejama visiem, kuri vēlas to lietot un uzlabot. Platformu izstrādāja melomāni [Jānis Vērzenieks] (https://github.com/jverzemnieks) un [Andrievs Niedra] (https://github.com/dredupuika) no dizaina un mūzikas mārketinga aģentūras [JVeart] (http://jveart.com/).
 
-Apmeklē interneta vietni http://musicsummer.lv/ • Par projektu http://musicsummer.lv/par
+Apmeklē interneta vietni http://musicsummer.lv/  •  Par projektu http://musicsummer.lv/par
 
 ##Iesaisties
 
@@ -17,7 +17,7 @@ Vēlies ziņot par sistēmas kļūdu, ieteikt uzlabojumu, atbalstīt vai tulkot 
 ##Copyright & License
 Copyright © 2014 Latvian Music Summer.
 Lincencēts zem [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)] (http://creativecommons.org/licenses/by-nc/4.0/). Tas nozīmē, jūs varat:
-* Dalīties – kopēt un izplatīt materiālus jebkurā tehnikā un formātā;
+* Dalīties — kopēt un izplatīt materiālus jebkurā tehnikā un formātā;
 * Pielāgot — remiksēt, pārveidot un uz šī materiāla būvēt jaunas idejas;
 * Šīs brīvības nevar atcelt kamēr tiek ievēroti šie noteikumi un dalaties līdzvērtīgi.
 
