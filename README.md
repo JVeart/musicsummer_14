@@ -8,7 +8,7 @@ Apmeklē interneta vietni http://musicsummer.lv/ • Par projektu http://musicsu
 
 Vēlies ziņot par sistēmas kļūdu, ieteikt uzlabojumu, atbalstīt vai tulkot Latvian Music Summer? [Sazinies ar mums] (hello@jveart.com) vai brīvi iesaisties GitHub.
 
-##Entuziastu kopiena
+###Entuziastu kopiena
 * Seko līdzi Lavian Music Summer attīstībai un savai mūzikas vasarai;
 * Seko [Twitter] (https://twitter.com/MusicSummerLV), [Facebook] (https://www.facebook.com/LatvianMusicSummer) un [Draugiem] (http://www.draugiem.lv/latvianmusicsummer/);
 * Lasi Share* konkursa manifesta atjauninājumus [Google Docs] (https://docs.google.com/document/d/1O-o9fhy1IcClhLi9PUi1NRMqyrpzmQmLXYuyZXbFSa4/edit?usp=sharing);
