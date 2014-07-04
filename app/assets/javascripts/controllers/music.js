@@ -2,20 +2,24 @@ jQuery(function()
 {
 	var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
 	var container = jQuery('.container');
-	
-	
+
+
 	var top_link = jQuery('body').find('.top_link');
-	
-	var overlay = container.find( '.overlay' );
+
+	var overlay1 = container.find( '.overlay1' );
+	var overlay2 = container.find( '.overlay2' );
 	var player_container = container.find( '.player' );
-	
+
 	var scroll_pos = 0;
 	// button overrides
-	
+
 	jQuery('body').on('click', '.ajax_link', function()
 	{
 		var target = jQuery(this);
-		
+		var controller_path = target.attr('href');
+		var overlay = target.attr('href') == '/votes/new' || target.attr('href') == '/reports/new' ? overlay2 : overlay1;
+		var other_overlay = target.attr('href') == '/votes/new' || target.attr('href') == '/reports/new' ? overlay1 : overlay2;
+
 		jQuery.ajax
 		({
 			format: 'json',
@@ -24,21 +28,25 @@ jQuery(function()
 			{
 				scroll_pos = jQuery('body,html').scrollTop();
 				jQuery('body,html').animate({scrollTop: 0},300);
+
 				overlay.addClass('visible');
-				var controller_path = target.attr('href').split('/');
-				var controller_name = controller_path[controller_path.length];
-				overlay.attr('data-controller', controller_name);
-				overlay.html(result);
+				other_overlay.removeClass('visible');
+				if (overlay.attr('data-controller') != controller_path )
+				{
+					overlay.attr('data-controller', controller_path);
+					overlay.html(result);
+				}
+
 			},
 			error: function()
 			{
 				//
 			}
 		});
-		
-		return false;	
+
+		return false;
 	});
-	
+
 	container.on('click', '.artist a', function()
 	{
 		var target = jQuery(this);
@@ -56,17 +64,17 @@ jQuery(function()
 				//
 			}
 		});
-		
-		return false;	
+
+		return false;
 	});
-	
+
 	// share buttons
 	jQuery('body').on('click','.share .button', function()
 	{
 		var target = jQuery(this);
-		target.siblings('.copy_field').trigger('click'); 
+		target.siblings('.copy_field').trigger('click');
 	});
-	
+
 	jQuery('body').on('click','.copy_field', function()
 	{
 		if(iOS)
@@ -78,7 +86,7 @@ jQuery(function()
 			this.select();
 		}
 	});
-	
+
 	top_link.click(function()
 	{
 		jQuery('body,html').animate(
@@ -87,9 +95,9 @@ jQuery(function()
 		}, 400);
 		return false;
 	});
-	
+
 	// player
-	
+
 	var check_hash = function()
 	{
 		if ( window.location.hash )
@@ -99,12 +107,12 @@ jQuery(function()
 				container.find( '.artists .artist a[href$="'+window.location.hash.substr(1)+'"]' ).trigger('click');
 				history.pushState(null, null, window.location.href.split('#')[0]);
 			},500);
-			
-		}	
+
+		}
 	};
-	
+
 	var tag = document.createElement('script');
-	
+
 	if(tag.readyState)
 	{  //IE
     tag.onreadystatechange = function()
@@ -119,16 +127,16 @@ jQuery(function()
 	{  //Others
     tag.onload = function() {
       check_hash();
-			
+
     };
   }
 	tag.src = "https://www.youtube.com/iframe_api";
 	var firstScriptTag = document.getElementsByTagName('script')[0];
 	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-	
+
 	var player;
 	var video_ids = [];
-	
+
 	function onPlayerStateChange(event){
 		switch (event.data)
 		{
@@ -158,17 +166,17 @@ jQuery(function()
 			break;
 		}
 	}
-	
+
 	function onPlayerReady(event)
 	{
 		player.loadPlaylist(video_ids, 0, 0, "default");
     event.target.playVideo();
-		
+
 		player_container.find( '.play' ).click(function()
 		{
 			var target = jQuery(this);
 			var playing = target.is('.playing');
-			
+
 			if( playing )
 			{
 				player.pauseVideo();
@@ -177,10 +185,10 @@ jQuery(function()
 			{
 				player.playVideo()
 			}
-			
+
 			target.toggleClass('playing', !playing);
 		});
-		
+
 		player_container.find( '.previous' ).click(function()
 		{
 			player.previousVideo();
@@ -189,9 +197,9 @@ jQuery(function()
 		{
 			player.nextVideo();
 		});
-		
+
 	}
-	
+
 	function onYouTubeIframeAPIReady()
 	{
 		player = new YT.Player('player',
@@ -205,7 +213,7 @@ jQuery(function()
 			}
 		});
 	}
-	
+
 	var render_player = function( item, target )
 	{
 		player_container.find('.video').html('<div id="player"></div>');
@@ -220,31 +228,31 @@ jQuery(function()
 		player_container.find( '.count' ).html(item.count);
 		player_container.find( '.vote' ).attr('action', '/artists/'+item.artist+'/vote');
 		player_container.find( '.vote' ).toggleClass('liked', item.liked );
-		
+
 		video_ids = [item.youtube_link];
 		while(typeof YT === 'undefined')
 		{
-		
+
 		}
 		onYouTubeIframeAPIReady();
 	};
-	
+
 	container.click(function(e)
 	{
 		var target = jQuery(e.target);
-		
+
 		if ( !target.is('.player') && target.parents('.player').length != 1 )
 		{
 			player_container.removeClass( 'visible' );
-			
+
 			player_container.find('.video').html('<div id="player"></div>');
 		}
 	});
-	
+
 	container.on('click', '.player .vote', function()
 	{
 		var target = jQuery(this);
-		
+
 		jQuery.ajax
 		({
 			type: 'POST',
@@ -268,10 +276,9 @@ jQuery(function()
 						{
 							scroll_pos = jQuery('body,html').scrollTop();
 							jQuery('body,html').animate({scrollTop: 0},300);
-							overlay.addClass('visible');
-							var controller_name = 'sign_in'
-							overlay.attr('data-controller', controller_name);
-							overlay.html(result);
+							overlay2.addClass('visible');
+							overlay2.attr('data-controller', 'sign_in');
+							overlay2.html(result);
 						},
 						error: function()
 						{
@@ -285,9 +292,9 @@ jQuery(function()
 				//
 			}
 		});
-		
+
 	});
-	
+
 	container.on('click', '.overlay', function(e)
 	{
 		var target = jQuery(this);
@@ -295,13 +302,14 @@ jQuery(function()
 		if ( target[0] == event_target[0] || target.children('div')[0] == event_target[0] )
 		{
 			jQuery('body,html').animate({scrollTop: scroll_pos },300);
-			overlay.removeClass('visible');
+			overlay1.removeClass('visible');
+			overlay2.removeClass('visible');
 		}
 	});
-	
+
 	container.on('click', '.start_player', function()
 	{
 		container.find( '.artists .artist a' ).first().trigger('click');
 	});
-	
+
 });

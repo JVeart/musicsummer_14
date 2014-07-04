@@ -1,12 +1,12 @@
 .about
 	.about_wrap
 		%h1 Mūzikas festivālu gaidītāko mākslinieku plakāts
-		
+
 		%p
 			Latvija. 34 festivāli. 600+ mākslinieki. 40+ skatuves. 1 vasara.
 			%br
 			Latvian Music Summer ir mūzikas vasaras ceļvedis, brīvs no festivālu organizatoru ambīcijām izcelt svarīgākos māksliniekus. Šis ir plakāts, kur visi makslinieki ir uzrakstīti vienā burtu fonta lielumā un nevienu mākslinieku nesauc “u.c.”. Šis ir neatkarīgs un atvērts plakāts, kuru brīvi veido tauta.
-		
+
 		%h1 Pievieno savus gaidītākos māksliniekus un laimē biļetes uz festivāliem
 		%p
 			Šogad mēs esam arī apņemušies vērts uzmanību uz mūzikas festivālu sezonas raksturīgajiem share* kokursiem, kur aicinam jūs izvelēties savu attieksmi pret tiem.
@@ -20,20 +20,20 @@
 						Visi, kuri pievieno pieķerto konkursu linkus
 						%a.ajax_link{ :href => '/manifests' } musicsummer.lv/manifests,
 						piedalās konkursā par biļetēm uz festivāliem.
-			
+
 			Jūsu pašu atbildība izlasīt arī mūsu
 			%a.ajax_link{ :href => '/rules' }noteikumus,
 			jo nezināšana jums atņem brīvību.
-		
-		
+
+
 		-# %h1 Klausies savu mūzikas vasaru pludmalē, pļavā vai stopojot uz festiem
 			%p
 				Nekādas aplikāciju instalēšanas. Vienkārši atver
 				%a.ajax_link{ :href => '/muzika' } musicsummer.lv/muzika
 				uz jebkuras mobīlās ierīces un klausies!
-		
-		
-		
+
+
+
 		%h1 Kurš maksā un kurš dara?
 		%p
 			Projekts tiek realizēts jau 3. vasaru. Ziņkārības arhīvs:
@@ -51,3 +51,8 @@
 			%br
 			%br
 			Ieteikumiem raksti uz hello[at]jveart.com
+
+= render 'application/footer'
+.second_footer
+	= render 'second_footer'
+	.footer_overlay

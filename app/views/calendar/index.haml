@@ -23,7 +23,7 @@
 									šodien
 								- else
 									- if (festival.end_date - Date.today).to_i > 0
-										vēl 
+										vēl
 										= (festival.end_date - Date.today).to_i
 										dienas
 									- else
@@ -31,7 +31,7 @@
 							.link
 								%a{ :href => festival.lineup_link, :target=>'_blank' } mākslinieki
 							.clear
-	%hr.green				
+	%hr.green
 	.past
 		- @past.each do |month_no, festivals|
 			.month
@@ -50,7 +50,11 @@
 								= "#{festival.start_date.day<10 ? '0' : ''}#{festival.start_date.day}."
 								- if festival.start_date.day != festival.end_date.day
 									= "- #{festival.end_date.day<10 ? '0' : ''}#{festival.end_date.day}."
-									
+
 							.link
 								%a{ :href => festival.lineup_link, :target=>'_blank' } mākslinieki
 							.clear
+= render 'application/footer'
+.second_footer
+	= render 'music/second_footer'
+	.footer_overlay

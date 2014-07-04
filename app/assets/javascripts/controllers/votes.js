@@ -1,8 +1,9 @@
 jQuery(function()
 {
 	var container = jQuery('.container');
-	var overlay = container.find('.overlay');
-	
+	var overlay1 = container.find('.overlay1');
+	var overlay2 = container.find('.overlay2');
+
 	// input handlers
 	container.on('focus','.new_vote .song input, .new_vote .festival input', function()
 	{
@@ -11,65 +12,65 @@ jQuery(function()
 		target.parent().find('.preview').show();
 		target.trigger('input');
 	});
-	
+
 	container.on('click','.new_vote .preview', function()
 	{
 		var target = jQuery(this);
 		target.hide();
 	});
-	
+
 	container.on('input','.new_vote .video_search, .new_vote .artist_search', function()
 	{
 		var song = container.find('.new_vote .video_search').val();
 		var artist = container.find('.new_vote .artist_search').val();
 		youtube_results( artist + ' ' + song, generate_preview );
 	});
-	
+
 	container.on('input','.new_vote .festival_search', function()
 	{
 		var target = jQuery(this);
 		festival_results( target.val() );
 	});
-	
+
 	container.on('click', '.participant_text', function()
 	{
 		container.find('.participant_check').trigger('click');
 	});
-	
+
 	container.on('change', '.rules_check, .participant_check', function()
 	{
 		var target = jQuery(this);
 		target.siblings('label').toggleClass( 'active', target.prop('checked') );
 		target.parent().toggleClass('valid', target.prop('checked')  );
-		
+
 	});
-	
+
 	container.on('input', '.contact_mail', function()
 	{
 		var target = jQuery(this);
 		target.siblings('label').toggleClass( 'active', target.val().trim().length > 0  );
 		container.find('.contact').toggleClass('valid', target.val().trim().length > 0  );
 	});
-	
+
 	// search handlers
 	var festival_results = function( search_for )
 	{
 		festivals = container.find('.new_vote .festival .preview span');
-		
+
 		festivals.each(function()
 		{
-			
+
 			var target = jQuery(this);
 			target.toggle( target.html().search( new RegExp( search_for, "i")) != -1 );
 		});
 	};
-	
+
 	var youtube_results = function( search_for, result_list )
 	{
     var url = "http://gdata.youtube.com/feeds/api/videos/?v=2&alt=jsonc&callback=?";
     url = url + '&orderby=viewCount';
     url = url + '&max-results=4';
-		
+
 		jQuery.ajax
 		({
 			url: url + "&q=" + search_for,
@@ -83,9 +84,9 @@ jQuery(function()
 				//
 			}
 		});
-			
+
 	};
-	
+
 	var generate_preview = function( video_list )
 	{
 		preview_container = container.find('.new_vote .song .preview');
@@ -97,9 +98,9 @@ jQuery(function()
 				preview_container.append('<div class="image search_result" data-video_id="'+ video.id +'" style="background-image:url(\''+ video.thumbnail.hqDefault +'\')" title="'+ video.title +'"></div>');
 			});
 		}
-		
+
 	};
-	
+
 	// result click handlers
 	container.on('click','.song .search_result', function()
 	{
@@ -115,7 +116,7 @@ jQuery(function()
 			container.find('.artist').toggleClass('valid', target.val().trim().length > 0   );
 		});
 	});
-	
+
 	container.on('click','.festival .preview span', function()
 	{
 		var target = jQuery(this);
@@ -123,13 +124,13 @@ jQuery(function()
 		container.find('.new_vote .festival_id').val( target.attr('data-festival_id') );
 		container.find('.new_vote .festival').addClass('valid');
 	});
-	
+
 	// validation and ajax form submit
 	container.on('submit','.new_vote, .new_report',function()
 	{
 		var form = jQuery(this);
 		form.find('.invalid').removeClass('invalid');
-		
+
 		var controller = form.is('.new_vote') ? 'music' : 'manifest';
 		var rules = form.find('.rules_check');
 		var required_fields = controller == 'music' ? form.find('.artist_search, .video_search, .festival_search, .youtube_link, .felstival_id') : form.find('.report_link');
@@ -166,16 +167,16 @@ jQuery(function()
 				var target = jQuery(this);
 				target.parent().addClass('invalid');
 			});
-			
+
 			if (!rules.prop('checked'))
 			{
 				rules.parent().addClass('invalid');
 			}
 		}
-		
-		return false;	
+
+		return false;
 	});
-	
+
 	// after create
 	var load_success_page = function(artist, controller)
 	{
@@ -186,8 +187,9 @@ jQuery(function()
 			url:  '/'+controller+'/success?ajax=1'+params,
 			success: function( result )
 			{
-				overlay.addClass('visible');
-				overlay.html(result);
+				overlay2.addClass('visible');
+				overlay2.attr('data-controller', 'success_page');
+				overlay2.html(result);
 				reload_artists();
 			},
 			error: function()
@@ -196,7 +198,7 @@ jQuery(function()
 			}
 		});
 	};
-	
+
 	var reload_artists = function()
 	{
 		jQuery.ajax
@@ -213,5 +215,5 @@ jQuery(function()
 			}
 		});
 	};
-	
+
 });

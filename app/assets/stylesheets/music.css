@@ -16,7 +16,7 @@
 	color: #c1c1c1;
 	margin-top: 40px;
 	margin-bottom: 100px;
-	
+
 }
 .artists h2 span
 {
@@ -156,8 +156,8 @@
     z-index: -1;
 	transition: all 0.05s linear 0s;
 	-webkit-transition: all 0.05s linear 0s;
-	
-	
+
+
 }
 .products .product:hover:before
 {
@@ -243,7 +243,10 @@
     z-index: 99;
 	overflow: visible;
 }
-
+.overlay2.visible
+{
+	top: 0px;
+}
 .body-manifest .overlay.visible
 {
 	min-height: 100%;
@@ -257,7 +260,7 @@
 }
 .overlay .share
 {
-	margin-top: 400px;
+	margin-top: 100px;
 }
 .player
 {
@@ -389,7 +392,7 @@
 
 .body-music .second_footer .manifest p span
 {
-	color: #5e6eaf;	
+	color: #5e6eaf;
 }
 
 .overlay .share

@@ -18,10 +18,10 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  
+
     ga('create', 'UA-32469461-3', 'musicsummer.lv');
     ga('send', 'pageview');
-  
+
   </script>
 </head>
 <body class="body-<%= controller.controller_name %>">
@@ -31,18 +31,7 @@
   <% if controller.controller_name == 'music' || controller.controller_name == 'manifest'  %>
     <%= render 'share' %>
   <% end %>
-  <footer class="controller-<%= controller.controller_name %>">
-    Latvian Music Summer © 2014
-    <br>
-    Jūsu brīvība kopēt, pārveidot, remiksēt un dalīties ar visu
-    <br>
-    šajā vietnē atrodamo saturu, pateicoties <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC licensei</a>.
-    <br>
-    Ja Tev ir ideja kā kaut kas varētu darboties labāk, <a href="mailto:hello@jveart.com">informē mūs</a> vai uzlabo to pats <a href="https://github.com/JVeart/musicsummer_14" target="_blank">GitHub</a>.
-    <br>
-    Alternative advertising rock, branding pop, design’n’code by
-    <a href="http://jveart.com" target="_blank"><div class="jveart_logo"></div></a>
-  </footer>
+  <%= render 'application/footer' %>
   <% if controller.controller_name == 'music' || controller.controller_name == 'manifest'  %>
     <div class="second_footer">
       <%= render 'second_footer' %>
