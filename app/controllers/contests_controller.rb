@@ -1,8 +1,8 @@
 class ContestsController < ApplicationController
-  
+
   def show
-    @contest = Report.where( 'name = ?', params[:id] )
-    
+    @contest = Report.where( 'name = ?', params[:id] ).first
+
     respond_to do |format|
       format.html
       format.json do
@@ -14,5 +14,5 @@ class ContestsController < ApplicationController
       end
     end
   end
-  
+
 end

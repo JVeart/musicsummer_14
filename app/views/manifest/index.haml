@@ -19,7 +19,7 @@
 	.reports_wrap
 		- @contests.each do |contest|
 			%span.report
-				%a{ :href => "/reports/#{contest.name}" }
+				%a{ :href => "/contests/#{contest.name}" }
 					= "#{contest.name},"
 	%a.button.ajax_link{ :href => new_report_path }
 		Pievienot
@@ -50,12 +50,7 @@
 .overlay.overlay1
 .overlay.overlay2
 .player
-	.video
-		#player
+	.image
+
 	.description
-		.artist
-		.festival
-		.vote
-			.count
-	.controls
-		.play
+		.name

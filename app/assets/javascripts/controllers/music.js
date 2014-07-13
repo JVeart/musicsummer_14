@@ -68,6 +68,27 @@ jQuery(function()
 		return false;
 	});
 
+	container.on('click', '.report a', function()
+	{
+		var target = jQuery(this);
+
+		jQuery.ajax
+		({
+			format: 'json',
+			url:  target.attr('href')+'.json',
+			success: function( result )
+			{
+				render_preview( result, target );
+			},
+			error: function()
+			{
+				//
+			}
+		});
+
+		return false;
+	});
+
 	// share buttons
 	jQuery('body').on('click','.share .button', function()
 	{
@@ -236,6 +257,21 @@ jQuery(function()
 		}
 		onYouTubeIframeAPIReady();
 	};
+
+	var render_preview = function( item, target )
+	{
+		player_container.find('.image').html('<img src="'+item.image+'">');
+		player_container.css(
+												{
+													top: target.offset().top + target.height()/2,
+													left: target.offset().left + target.width()/2,
+												});
+		player_container.addClass( 'visible' );
+		player_container.find( '.name' ).html(item.name);
+		//player_container.find( '.name' ).html('<a href="'+item.contest_link+'" target="_blank">'+item.name+'</a>');
+
+	};
+
 
 	container.click(function(e)
 	{
